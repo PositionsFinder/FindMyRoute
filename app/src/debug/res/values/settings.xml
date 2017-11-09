@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="usertable_name">USERS</string>
+    <string name="usertable_column_user">USERNAME</string>
+    <string name="usertable_column_password">PASSWORD</string>
+    <string name="usertable_column_active">ACTIVE</string>
+    <string name="prefs_username_key">userName</string>
+    <string name="prefs_default_username">defaultUser</string>
+    <string name="prefs_password_key">userPassword</string>
+    <string name="prefs_default_password">0000</string> <!-- Not a possible real password - hashing etc.. -->
+</resources>
