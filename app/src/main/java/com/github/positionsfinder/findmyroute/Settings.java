@@ -8,10 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Mosaab on 11/9/2017.
- */
-
-/**
  * This class handles the SharedPreferences object provided by the main activity. All modifications
  * of the preferences must happen through this class.
  */
