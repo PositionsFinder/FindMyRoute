@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     startIntent.putExtra("username", user.getText().toString());
                     startActivity(startIntent);
                 } else {
-                    txtMessage.setText("Wrong Username Or Password | VPN?");
+                    txtMessage.setText("Wrong Username Or Password | VPN ?");
                 }
 
             }
