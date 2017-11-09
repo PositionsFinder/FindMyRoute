@@ -7,6 +7,7 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.Map;
 
+
 /**
  * This class handles the SharedPreferences object provided by the main activity. All modifications
  * of the preferences must happen through this class.
