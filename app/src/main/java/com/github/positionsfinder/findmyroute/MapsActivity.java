@@ -13,7 +13,11 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,13 +27,14 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
     private TextView info;
     private LocationManager locationManager;
     private LocationListener locationListener;
     private Button btnLocate;
+    private ProgressBar pBar;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -37,11 +42,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
         info = (TextView) findViewById(R.id.info);
+        pBar = findViewById(R.id.progressBar);
 
         String msg = getIntent().getExtras().getString("username").toString();
         info.setText("Info: Hallo " + msg + ", Wait until the Location is Loaded!");
@@ -55,8 +63,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         allowGPS();
-
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -71,7 +77,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -82,7 +87,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return;
         }
     }
-
 
     /**
      * Manipulates the map once available.
@@ -103,9 +107,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-
     @Override
     public void onLocationChanged(Location location) {
+        pBar.setVisibility(View.GONE);
+
         info.setText(" Long: " + location.getLongitude() + " Lat: " + location.getLatitude());
 
         mMap.clear();
