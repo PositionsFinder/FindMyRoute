@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
-import com.github.positionsfinder.findmyroute.R;
 
 public class Splash extends AppCompatActivity {
 
@@ -14,11 +14,15 @@ public class Splash extends AppCompatActivity {
     private Handler handler;
     private Runnable runnable;
 
+    private TextView txtView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        txtView = (TextView) findViewById(R.id.textView);
 
         //ToDo: DB CONNECTION CHECK (in 3 Sekunden)
         handler = new Handler();
