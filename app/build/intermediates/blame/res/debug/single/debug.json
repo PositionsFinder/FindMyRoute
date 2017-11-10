@@ -32,12 +32,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable\\abc_ic_clear_material.xml"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_21_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_21_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_12_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_12_dark.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_21_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_21_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_navigation_empty_icon.xml.flat",
@@ -88,12 +88,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_12_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_15_light.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_15_light.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_03_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_03_light.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_15_light.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_15_light.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_00_light.png.flat",
@@ -102,6 +102,10 @@
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Java\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -136,12 +140,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_30_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_13_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_13_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_checkbox.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_13_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_13_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_group_expand_14.png.flat",
@@ -164,12 +168,12 @@
         "source": "C:\\Java\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_27_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_27_light.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_21_light.png.flat",
@@ -180,20 +184,20 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_14_dark.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_11_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_11_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.0.aar\\d935d52c14d250a41d4f7eb10f490a79\\res\\drawable-mdpi-v4\\design_ic_visibility.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_11_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_11_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\color-v11_abc_background_cache_hint_selector_material_light.xml.flat",
@@ -212,12 +216,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_action.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.0.aar\\d554c784fc06f42ee4f43d6666364273\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -256,12 +260,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_12_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_15_light.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_15_light.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.0.aar\\d935d52c14d250a41d4f7eb10f490a79\\res\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_15_light.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_15_light.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_10_dark.png.flat",
@@ -316,12 +320,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_03_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_00_light.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_00_light.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_07_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_07_dark.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_00_light.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_00_light.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mr_media_stop_light.xml.flat",
@@ -332,12 +336,12 @@
         "source": "C:\\Java\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_07_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_07_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_07_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_07_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_04_dark.png.flat",
@@ -364,20 +368,20 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_grey.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\d6e4cb0ff8e6f14dadf231a41daf2813\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\d6e4cb0ff8e6f14dadf231a41daf2813\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility.png.flat",
@@ -388,32 +392,32 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-mdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\d6e4cb0ff8e6f14dadf231a41daf2813\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-mdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_default_mtrl_shape.xml.flat",
@@ -492,12 +496,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_dark.xml.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_09_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_09_dark.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_dark.xml.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ic_mr_button_disabled_dark.png.flat",
@@ -684,6 +688,10 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_media_pause_light.png"
     },
     {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Java\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_vol_type_speaker_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_vol_type_speaker_light.png"
     },
@@ -764,12 +772,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-hdpi-v4\\ic_mr_button_grey.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
@@ -806,6 +814,10 @@
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_search_api_material.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Java\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar.xml.flat",
@@ -920,12 +932,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_vol_type_speaker_group_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_27_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_27_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_27_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_27_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -964,20 +976,20 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_24_dark.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_14_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_14_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_19_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_19_dark.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_02_light.png.flat",
@@ -1060,12 +1072,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_grey.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_17_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_17_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_08_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_08_light.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_17_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_17_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_02_light.png.flat",
@@ -1104,16 +1116,16 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-mdpi-v4\\ic_vol_type_speaker_dark.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_20_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_20_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_26_dark.png.flat",
@@ -1228,12 +1240,12 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.0.aar\\d935d52c14d250a41d4f7eb10f490a79\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_switch_thumb_material.xml.flat",
@@ -1308,36 +1320,36 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_22_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_10_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_10_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_28_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_28_light.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_10_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_10_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\9fa1dd9bbf675feb7632f5a7e1dd9cdf\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\d6e4cb0ff8e6f14dadf231a41daf2813\\res\\layout-v21\\notification_template_icon_group.xml"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d256144dbafa1db737742e6ae9f746c9\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\d6e4cb0ff8e6f14dadf231a41daf2813\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connected_16_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_16_light.png"
     },
     {
-        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_27_dark.png.flat",
-        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_27_dark.png"
-    },
-    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_24_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connected_24_dark.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connecting_27_dark.png.flat",
+        "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_27_dark.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_07_light.png.flat",
@@ -2808,6 +2820,10 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connected_14_light.png"
     },
     {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Java\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_30_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_30_dark.png"
     },
@@ -2870,6 +2886,10 @@
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_20_light.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_20_light.png"
+    },
+    {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Java\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_mr_button_connected_04_dark.png.flat",
