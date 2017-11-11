@@ -2872,6 +2872,10 @@
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xhdpi-v4\\ic_mr_button_connecting_22_dark.png"
     },
     {
+        "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hmlogo.png.flat",
+        "source": "C:\\Java\\app\\src\\main\\res\\drawable\\hmlogo.png"
+    },
+    {
         "merged": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_mr_button_connecting_23_dark.png.flat",
         "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-27.0.0.aar\\e6e27cd4ff17136f81a7ba020f898a6c\\res\\drawable-xxhdpi-v4\\ic_mr_button_connecting_23_dark.png"
     },

@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -182,12 +183,36 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         switch (id) {
             case R.id.about:
                 Toast.makeText(this, "About",Toast.LENGTH_SHORT).show();
+                aboutMessage();
+                break;
             case R.id.useoffline:
                 Toast.makeText(this, "useoffline",Toast.LENGTH_SHORT).show();
+                Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
+                startIntent.putExtra("username", "Gast | Offline.");
+                startActivity(startIntent);
+                break;
             case R.id.help:
                 Toast.makeText(this, "help",Toast.LENGTH_SHORT).show();
+                break;
         }
 
         return true;
+    }
+
+    private void aboutMessage() {
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Asli Mosaab\nHaider Paolo\nHM München\nAndroid Programmieren Projekt");
+        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+
+
+        AlertDialog dialog = builder.create();
+        dialog.setIcon(R.drawable.hmlogo);
+        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.show();
     }
 }
