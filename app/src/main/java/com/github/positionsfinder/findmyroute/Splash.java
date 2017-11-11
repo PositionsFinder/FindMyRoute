@@ -1,6 +1,9 @@
 package com.github.positionsfinder.findmyroute;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +32,7 @@ public class Splash extends AppCompatActivity {
         runnable = new Runnable() {
             @Override
             public void run() {
+                txtView.setText("Internet: "+ internetConnection());
                 Intent home_activity = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(home_activity);
                 finish();
@@ -36,5 +40,14 @@ public class Splash extends AppCompatActivity {
         };
         handler.postDelayed(runnable, SPLASH_TIME_OUT);
 
+    }
+
+    // Check if user have Internet on Device.
+    private boolean internetConnection() {
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo ni = cm.getActiveNetworkInfo();
+        return (null != ni);
+        
     }
 }

@@ -16,6 +16,7 @@ import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -26,11 +27,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private EditText user;
     private EditText pass;
     private TextView txtMessage;
+    private ProgressBar progressLogin;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-       // getSupportActionBar().hide();
+        // getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -41,7 +43,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         pass = (EditText) findViewById(R.id.editPass);
 
         txtMessage = (TextView) findViewById(R.id.textViewMessage);
-        System.out.println("Internet Status: "+checkInternetConnection());
+        progressLogin = (ProgressBar) findViewById(R.id.progressLogin);
+        progressLogin.setVisibility(View.INVISIBLE);
+
+
+        txtMessage.setText("");
+        System.out.println("Internet Status: " + checkInternetConnection());
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 }
 
                 if (login.login()) {
+                    progressLogin.setVisibility(View.VISIBLE);
                     txtMessage.setText("Logged in Please Wait.");
                     Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
                     startIntent.putExtra("username", user.getText().toString());
@@ -151,4 +159,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+/*    //Wichtig: When BACK BUTTON is pressed, the activity on the stack is restarted
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+    }*/
 }
