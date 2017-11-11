@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         progressLogin.setVisibility(View.INVISIBLE);
 
 
-        txtMessage.setText("");
+
         System.out.println("Internet Status: " + checkInternetConnection());
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,14 +166,17 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     }
 
-/*    //Wichtig: When BACK BUTTON is pressed, the activity on the stack is restarted
+   //Wichtig: When BACK BUTTON is pressed, the activity on the stack is restarted
     @Override
     public void onRestart()
     {
         super.onRestart();
-        finish();
-        startActivity(getIntent());
-    }*/
+        progressLogin.setVisibility(View.INVISIBLE);
+        txtMessage.setText("");
+
+        //finish();
+        //startActivity(getIntent());
+    }
 
     //three dots menu.
     private void getOverflowMenu() {
