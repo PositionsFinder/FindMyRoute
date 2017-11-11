@@ -1,19 +1,19 @@
-#Sat Nov 11 03:09:17 CET 2017
+#Sat Nov 11 15:10:37 CET 2017
 renamed.5=classes6.dex
 renamed.4=classes5.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.5=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\36
-base.4=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\35
-base.3=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\34
-base.2=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\33
-base.1=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\32
-base.0=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\31
-file.5=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\36\\classes.dex
-file.4=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\35\\classes.dex
-file.3=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\34\\classes.dex
-file.2=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\33\\classes.dex
-file.1=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\32\\classes.dex
-file.0=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\31\\classes.dex
+base.5=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\54
+base.4=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\53
+base.3=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\52
+base.2=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\51
+base.1=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\50
+base.0=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\55
+file.5=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\54\\classes.dex
+file.4=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\53\\classes.dex
+file.3=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\52\\classes.dex
+file.2=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\51\\classes.dex
+file.1=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\50\\classes.dex
+file.0=C\:\\Java\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\55\\classes.dex

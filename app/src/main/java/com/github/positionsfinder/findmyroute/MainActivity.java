@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        getOverflowMenu();
-
         // getSupportActionBar().hide();
 
         super.onCreate(savedInstanceState);
@@ -167,18 +165,4 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //startActivity(getIntent());
     }
 
-    //three dots menu.
-    private void getOverflowMenu() {
-
-        try {
-            ViewConfiguration config = ViewConfiguration.get(this);
-            Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
-            if (menuKeyField != null) {
-                menuKeyField.setAccessible(true);
-                menuKeyField.setBoolean(config, false);
-            }
-        } catch (Exception e) {
-           System.out.println("Menu: " + e.getMessage());
-        }
-    }
 }
