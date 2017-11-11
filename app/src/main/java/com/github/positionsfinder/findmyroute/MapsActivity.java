@@ -35,8 +35,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private TextView info;
     private LocationManager locationManager;
-    private LocationListener locationListener;
-    private Button btnLocate;
     private ProgressBar pBar;
 
 
