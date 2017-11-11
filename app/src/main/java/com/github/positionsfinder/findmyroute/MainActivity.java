@@ -13,12 +13,15 @@ import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Field;
 
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         progressLogin.setVisibility(View.INVISIBLE);
 
 
-        if(getIntent().hasExtra("Status")){
+        if (getIntent().hasExtra("Status")) {
             txtMessage.setText(getIntent().getExtras().getString("Status"));
         }
 
@@ -153,10 +156,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     }
 
-   //Wichtig: When BACK BUTTON is pressed, the activity on the stack is restarted
+    //Wichtig: When BACK BUTTON is pressed, the activity on the stack is restarted
     @Override
-    public void onRestart()
-    {
+    public void onRestart() {
         super.onRestart();
         progressLogin.setVisibility(View.INVISIBLE);
         txtMessage.setText("");
@@ -165,4 +167,27 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //startActivity(getIntent());
     }
 
+    // Main Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return true;
+    }
+
+    // Main Menu Options
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.about:
+                Toast.makeText(this, "About",Toast.LENGTH_SHORT).show();
+            case R.id.useoffline:
+                Toast.makeText(this, "useoffline",Toast.LENGTH_SHORT).show();
+            case R.id.help:
+                Toast.makeText(this, "help",Toast.LENGTH_SHORT).show();
+        }
+
+        return true;
+    }
 }
