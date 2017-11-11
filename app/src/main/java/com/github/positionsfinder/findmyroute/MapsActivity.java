@@ -39,6 +39,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private TextView info;
     private LocationManager locationManager;
     private ProgressBar pBar;
+    private boolean hideMenu = false;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -52,8 +53,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         info = (TextView) findViewById(R.id.info);
         pBar = findViewById(R.id.progressBar);
 
-        String msg = getIntent().getExtras().getString("username").toString();
-        info.setText("Info: Hallo " + msg + ", Wait until the Location is Loaded!");
+        // get username for greeting message
+        if (getIntent().hasExtra("username")) {
+            String msg = getIntent().getExtras().getString("username").toString();
+            info.setText("Info: Hallo " + msg + ", Wait until the Location is Loaded!");
+        }
+        // if user offline!
+        if (getIntent().hasExtra("offline")) {
+            hideMenu = true;
+        }
+
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -147,25 +156,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-    // Main Menu
+    // Main Menu - Hide menu if Offline
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mapmenu, menu);
+        if (!hideMenu) {
+            getMenuInflater().inflate(R.menu.mapmenu, menu);
+        }
         return true;
     }
 
-    // Main Menu Options
+    // Main Menu Options - Hide menu if Offline
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
+        if (!hideMenu) {
+            int id = item.getItemId();
 
-        switch (id) {
-            case R.id.partner:
-                Toast.makeText(this, "partner",Toast.LENGTH_SHORT).show();
-            case R.id.statistic:
-                Toast.makeText(this, "statistic",Toast.LENGTH_SHORT).show();
+            switch (id) {
+                case R.id.partner:
+                    Toast.makeText(this, "partner", Toast.LENGTH_SHORT).show();
+                case R.id.statistic:
+                    Toast.makeText(this, "statistic", Toast.LENGTH_SHORT).show();
+            }
         }
-
         return true;
     }
 

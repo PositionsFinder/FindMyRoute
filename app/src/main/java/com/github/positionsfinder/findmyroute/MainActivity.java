@@ -187,9 +187,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 break;
             case R.id.useoffline:
                 Toast.makeText(this, "useoffline",Toast.LENGTH_SHORT).show();
-                Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
-                startIntent.putExtra("username", "Gast | Offline.");
-                startActivity(startIntent);
+                offlineSurfe();
                 break;
             case R.id.help:
                 Toast.makeText(this, "help",Toast.LENGTH_SHORT).show();
@@ -215,5 +213,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void offlineSurfe(){
+        Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
+        startIntent.putExtra("offline", "offline");
+        startActivity(startIntent);
     }
 }
