@@ -32,8 +32,11 @@ public class Splash extends AppCompatActivity {
         runnable = new Runnable() {
             @Override
             public void run() {
-                txtView.setText("Internet: "+ internetConnection());
+                txtView.setText("Internet: " + internetConnection());
                 Intent home_activity = new Intent(getApplicationContext(), MainActivity.class);
+                if (!internetConnection()) {
+                    home_activity.putExtra("Status", "Check Your Internet Connection.");
+                }
                 startActivity(home_activity);
                 finish();
             }
@@ -48,6 +51,6 @@ public class Splash extends AppCompatActivity {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
         return (null != ni);
-        
+
     }
 }

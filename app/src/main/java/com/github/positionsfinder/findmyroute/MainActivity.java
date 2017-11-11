@@ -53,8 +53,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         progressLogin.setVisibility(View.INVISIBLE);
 
 
+        if(getIntent().hasExtra("Status")){
+            txtMessage.setText(getIntent().getExtras().getString("Status"));
+        }
 
-        System.out.println("Internet Status: " + checkInternetConnection());
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,20 +131,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 "Loading. Please wait...", true);
 
 
-    }
-
-    private String checkInternetConnection() {
-        String internet = "";
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo ni = cm.getActiveNetworkInfo();
-        if (null == ni) {
-            internet = "NO";
-            System.out.println("***** NO internet connection *****");
-        } else {
-            internet = "YES";
-            System.out.println("***** internet connection OK *****");
-        }
-        return internet;
     }
 
 
