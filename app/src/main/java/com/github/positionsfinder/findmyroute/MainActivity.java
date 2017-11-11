@@ -203,6 +203,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Asli Mosaab\nHaider Paolo\nHM München\nAndroid Programmieren Projekt");
+        builder.setTitle("About:");
+        builder.setIcon(R.drawable.hmlogo);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
@@ -211,8 +213,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
         AlertDialog dialog = builder.create();
-        dialog.setIcon(R.drawable.hmlogo);
-        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.show();
     }
 }
