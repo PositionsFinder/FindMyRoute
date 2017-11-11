@@ -202,7 +202,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private void aboutMessage() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Asli Mosaab\nHaider Paolo\nHM München\nAndroid Programmieren Projekt");
+        builder.setMessage("Find My Route Version 1.0\nAsli Mosaab\nHaider Paolo\n" +
+                "Hochschule München\nProgrammierung nativer Android-Apps WS 2017/18 (Schütz)\nMore Info:\nhttps://github.com/PositionsFinder/FindMyRoute");
         builder.setTitle("About:");
         builder.setIcon(R.drawable.hmlogo);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
