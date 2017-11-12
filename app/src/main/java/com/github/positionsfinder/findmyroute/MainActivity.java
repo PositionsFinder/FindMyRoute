@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
         if (getIntent().hasExtra("Status")) {
-            txtMessage.setText(getIntent().getExtras().getString("Status"));
+            Toast.makeText(this, getIntent().getExtras().getString("Status"),Toast.LENGTH_LONG).show();
         }
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         ProgressDialog dialog = ProgressDialog.show(this, "",
                 "Loading. Please wait...", true);
+        dialog.closeOptionsMenu();
 
 
     }
@@ -186,11 +187,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 aboutMessage();
                 break;
             case R.id.useoffline:
-                Toast.makeText(this, "useoffline",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Use Offline",Toast.LENGTH_SHORT).show();
                 offlineSurfe();
                 break;
             case R.id.help:
-                Toast.makeText(this, "help",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Help!",Toast.LENGTH_SHORT).show();
                 break;
         }
 

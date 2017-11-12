@@ -56,7 +56,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // get username for greeting message
         if (getIntent().hasExtra("username")) {
             String msg = getIntent().getExtras().getString("username").toString();
-            info.setText("Info: Hallo " + msg + ", Wait until the Location is Loaded!");
+            info.setText("Hallo " + msg + ", Wait until the Location is Loaded!");
         }
         // if user offline!
         if (getIntent().hasExtra("offline")) {
@@ -173,9 +173,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             switch (id) {
                 case R.id.partner:
-                    Toast.makeText(this, "partner", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Connect to Partner", Toast.LENGTH_SHORT).show();
                 case R.id.statistic:
-                    Toast.makeText(this, "statistic", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Statistic", Toast.LENGTH_SHORT).show();
             }
         }
         return true;
