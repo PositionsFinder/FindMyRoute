@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="db_baseUrl">http://10.22.62.29/~haider/FMR/user.php</string>
     <string name="usertable_name">USERS</string>
     <string name="usertable_column_user">USERNAME</string>
     <string name="usertable_column_password">PASSWORD</string>
