@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
         if (getIntent().hasExtra("Status")) {
-            Toast.makeText(this, getIntent().getExtras().getString("Status"),Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getIntent().getExtras().getString("Status"), Toast.LENGTH_LONG).show();
         }
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -181,18 +181,24 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
+        Intent startIntent;
         switch (id) {
             case R.id.about:
-                Toast.makeText(this, "About",Toast.LENGTH_SHORT).show();
-                aboutMessage();
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                startIntent = new Intent(getApplicationContext(), HelpAndAbout.class);
+                startIntent.putExtra("about", "about");
+                startActivity(startIntent);
                 break;
             case R.id.useoffline:
-                Toast.makeText(this, "Use Offline",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Use Offline", Toast.LENGTH_SHORT).show();
                 offlineSurfe();
                 break;
             case R.id.help:
-                Toast.makeText(this, "Help!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Help!", Toast.LENGTH_SHORT).show();
+                startIntent = new Intent(getApplicationContext(), HelpAndAbout.class);
+                startIntent.putExtra("help", "help");
+                startActivity(startIntent);
+
                 break;
         }
 
@@ -217,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         dialog.show();
     }
 
-    private void offlineSurfe(){
+    private void offlineSurfe() {
         Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
         startIntent.putExtra("offline", "offline");
         startActivity(startIntent);

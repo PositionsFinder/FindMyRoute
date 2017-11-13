@@ -46,43 +46,43 @@ INJECTED from C:\Java\app\src\main\AndroidManifest.xml:2:1-52:12
 	xmlns:android
 		ADDED from C:\Java\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.GET_ACCOUNTS
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:5:5-71
+	android:name
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:5:22-68
+uses-permission#android.permission.READ_PROFILE
 ADDED from C:\Java\app\src\main\AndroidManifest.xml:6:5-71
 	android:name
 		ADDED from C:\Java\app\src\main\AndroidManifest.xml:6:22-68
-uses-permission#android.permission.READ_PROFILE
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:7:5-71
-	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:7:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:8:5-72
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:7:5-72
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:8:22-69
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:7:22-69
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:9:5-81
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:9:22-78
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:8:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:10:5-79
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:10:22-76
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:11:5-81
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:10:5-81
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:11:22-78
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:10:22-78
 uses-permission#android.permission.INTERNET
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:12:5-67
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.gms:play-services-maps:11.6.0] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.0.aar\c1fb675a836079ad9bb4f2d79c781ce0\AndroidManifest.xml:20:5-66
 MERGED from [com.google.android.gms:play-services-maps:11.6.0] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.0.aar\c1fb675a836079ad9bb4f2d79c781ce0\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:12:22-64
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:11:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:13:5-79
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:12:5-79
 MERGED from [com.google.android.gms:play-services-maps:11.6.0] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.0.aar\c1fb675a836079ad9bb4f2d79c781ce0\AndroidManifest.xml:19:5-78
 MERGED from [com.google.android.gms:play-services-maps:11.6.0] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.0.aar\c1fb675a836079ad9bb4f2d79c781ce0\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:13:22-76
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:12:22-76
 application
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:21:5-50:19
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:19:5-50:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7a5a2b3e082320c02b8a7afbae15c764\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7a5a2b3e082320c02b8a7afbae15c764\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-maps:11.6.0] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.0.aar\c1fb675a836079ad9bb4f2d79c781ce0\AndroidManifest.xml:24:5-19
@@ -104,47 +104,51 @@ MERGED from [com.google.android.gms:play-services-tasks-license:11.6.0] C:\Users
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\a81fc67d663923300a744ff6dbedba25\AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Mosaab\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\a81fc67d663923300a744ff6dbedba25\AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:26:9-35
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:24:9-41
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:22:9-41
 	android:roundIcon
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:25:9-54
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:23:9-54
 	android:icon
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:23:9-43
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:21:9-43
 	android:allowBackup
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:20:9-35
 	android:theme
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:27:9-40
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:25:9-40
 activity#com.github.positionsfinder.findmyroute.Splash
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:28:9-33:20
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:26:9-32:20
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:28:19-41
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:26:19-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:29:13-32:29
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:30:27-74
 activity#com.github.positionsfinder.findmyroute.MainActivity
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:34:9-49
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:33:9-50
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:34:19-47
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:33:19-47
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:43:9-45:55
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:42:9-44:55
 	android:value
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:45:13-52
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:44:13-52
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:44:13-58
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:43:13-58
 activity#com.github.positionsfinder.findmyroute.MapsActivity
-ADDED from C:\Java\app\src\main\AndroidManifest.xml:47:9-49:68
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:46:9-48:59
 	android:label
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:49:13-56
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:48:13-56
 	android:name
-		ADDED from C:\Java\app\src\main\AndroidManifest.xml:48:13-41
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:47:13-41
+activity#com.github.positionsfinder.findmyroute.HelpAndAbout
+ADDED from C:\Java\app\src\main\AndroidManifest.xml:49:9-59
+	android:name
+		ADDED from C:\Java\app\src\main\AndroidManifest.xml:49:19-47
 uses-sdk
 INJECTED from C:\Java\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Java\app\src\main\AndroidManifest.xml

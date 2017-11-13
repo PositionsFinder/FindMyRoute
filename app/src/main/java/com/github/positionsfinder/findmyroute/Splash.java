@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class Splash extends AppCompatActivity {
 
     // Spalsh Variablen
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_TIME_OUT = 1500;
     private Handler handler;
     private Runnable runnable;
 
@@ -27,7 +27,7 @@ public class Splash extends AppCompatActivity {
 
         txtView = (TextView) findViewById(R.id.textView);
 
-        //ToDo: DB CONNECTION CHECK (in 3 Sekunden)
+        //ToDo: DB CONNECTION CHECK (in 1.5 Sekunden)
         handler = new Handler();
         runnable = new Runnable() {
             @Override

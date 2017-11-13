@@ -5,7 +5,8 @@
     <item
         android:id="@+id/about"
 
-        android:title="About"></item>
+        android:title="About"
+        app:showAsAction="always"></item>
     <item
         android:id="@+id/useoffline"
 
