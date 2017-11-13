@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // hidden by default.
         // getSupportActionBar().hide();
 
         super.onCreate(savedInstanceState);
