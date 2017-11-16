@@ -7,6 +7,8 @@ import android.util.Base64;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Paolo on 14.11.2017.
@@ -17,6 +19,8 @@ import java.security.NoSuchAlgorithmException;
  * user and their interaction with the Database.
  */
 public class Helper_User {
+
+    private static boolean isUserLoggedIn;
 
     public static String generateHashedPassword(String password) {
 
@@ -34,6 +38,21 @@ public class Helper_User {
         }
 
         return pwSha256Base64;
+    }
+
+    public static void setUserLoggedIn(ArrayList<HashMap<String, Object>> result){
+
+        if(result != null && result.get(0) != null){
+            HashMap<String, Object> resMap = result.get(0);
+            if(resMap.containsKey("SUCCESSS")){
+                isUserLoggedIn = true;
+            }
+        }
+
+    }
+
+    public static  boolean getUserLoggedIn(){
+        return isUserLoggedIn;
     }
 
 }
