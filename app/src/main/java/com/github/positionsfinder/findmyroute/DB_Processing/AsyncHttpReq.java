@@ -65,6 +65,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,ArrayList<HashM
      * The String containing the BaseURL from which the DB-Server can be accessed
      */
     private String baseUrl;
+    private Context cntx;
 
     /**
      * Keeps a reference to the calling Activity to access (1) their Resources and (2) talk back
@@ -73,6 +74,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,ArrayList<HashM
     public AsyncHttpReq(Context cntx){
 
         Resources res = cntx.getResources();
+        this.cntx = cntx;
         baseUrl = res.getString(R.string.db_baseUrl);
     }
 
@@ -81,7 +83,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,ArrayList<HashM
      * @param methodToCall The R.string.xxxx of the method we want to use
      * @param values A HashMap containing all parameters needed for the provided methodToCall
      */
-    public void callHttpMethod(Context cntx, int methodToCall, HashMap<String, Object> values){
+    public void callHttpMethod(int methodToCall, HashMap<String, Object> values){
 
         // Access the Resources to get the >action< String (res.getString(xxxx))
         Resources res = cntx.getResources();
