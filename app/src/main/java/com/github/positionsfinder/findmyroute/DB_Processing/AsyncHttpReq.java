@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.github.positionsfinder.findmyroute.R; // TODO: Is this working
+import com.github.positionsfinder.findmyroute.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -32,7 +32,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 /**
- * Created by User on 11.11.2017.
+ * Created by Helper_User on 11.11.2017.
  *
  * TODO: REMOVE AFTER IMPL
  * SAMPLE IMPLEMENTATION:
@@ -90,14 +90,14 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,ArrayList<HashM
         switch(methodToCall){
             case R.string.http_method_ActivateUser:
 
+                baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
 
                 for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
 
                     if(entry.getKey().equals("password")){
-                        //String hashedPw = userInstance.generateHashedPassword(password);
-                        // params += "&" + entry.getKey() + "=" + hashedPw;
-                        params += "&" + entry.getKey() + "=" + entry.getValue(); // TODO: remove and use code above
+                        String hashedPw = Helper_User.generateHashedPassword((String)entry.getValue());
+                        params += "&" + entry.getKey() + "=" + hashedPw;
                     } else {
                         params += "&" + entry.getKey() + "=" + entry.getValue();
                     }
@@ -108,6 +108,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,ArrayList<HashM
 
             case R.string.http_method_LoginUser:
 
+                baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
 
                 for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
@@ -118,6 +119,18 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,ArrayList<HashM
 
             case R.string.http_method_setUserOnline:
 
+                baseUrl += "user.php";
+                params = "?action=" + res.getString(methodToCall);
+
+                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
+                    params += "&" + entry.getKey() + "=" + entry.getValue();
+                }
+                //DBG: System.out.println(params);
+                break;
+
+            case R.string.http_method_insertPosition:
+
+                baseUrl += "pos.php";
                 params = "?action=" + res.getString(methodToCall);
 
                 for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
@@ -283,5 +296,5 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,ArrayList<HashM
      * structure.
      * @param result The HTML response >result< in form of an ArrayList-HashMap structure
      */
-    abstract void onPostPostExecute(ArrayList<HashMap<String, Object>> result);
+    protected abstract void onPostPostExecute(ArrayList<HashMap<String, Object>> result);
 }
