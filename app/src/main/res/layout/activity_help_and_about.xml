@@ -10,7 +10,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.github.positionsfinder.findmyroute.HelpAndAbout">
+        tools:context="com.github.positionsfinder.findmyroute.Main.HelpAndAbout">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -27,8 +27,8 @@
 
         <CheckedTextView
             android:id="@+id/checkedTextView"
-            android:layout_width="349dp"
-            android:layout_height="291dp"
+            android:layout_width="355dp"
+            android:layout_height="487dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="30dp"

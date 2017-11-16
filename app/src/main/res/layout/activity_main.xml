@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundcolor"
-    tools:context="com.github.positionsfinder.findmyroute.MainActivity">
+    tools:context="com.github.positionsfinder.findmyroute.Main.MainActivity">
 
     <EditText
         android:id="@+id/editUser"

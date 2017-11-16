@@ -6,6 +6,8 @@
     <item
         android:id="@+id/statistic"
         android:title="Statistic"></item>
-
+    <item
+        android:id="@+id/attractions"
+        android:title="Tourist Attractions"></item>
 
 </menu>

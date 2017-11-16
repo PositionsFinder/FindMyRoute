@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">My Route</string>
-    <string name="title_activity_maps">Find My Route</string>
-    <!-- //HTTP_methods -->
+    <string name="app_name">Join Route</string>
+    <string name="title_activity_maps">Join My Route</string>
+    <!-- //HTTP_methods TODO: Wichtig!-->
     <!-- the string's name is for our identification, the value is the corresponding php method name -->
     <string name="http_method_ActivateUser">activateUser</string>
     <string name="http_method_LoginUser">loginUser</string>
