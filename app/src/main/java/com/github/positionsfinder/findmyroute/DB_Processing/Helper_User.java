@@ -1,10 +1,7 @@
 package com.github.positionsfinder.findmyroute.DB_Processing;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.util.Base64;
-import android.util.Log;
 
 import com.github.positionsfinder.findmyroute.R;
 
@@ -13,12 +10,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 /**
- * Created by Paolo on 14.11.2017.
+ * Created by User on 14.11.2017.
  */
 
 /**
@@ -28,10 +22,16 @@ import java.util.concurrent.TimeoutException;
  */
 public class Helper_User {
 
-    private static boolean isUserLoggedIn;
-
+    /**
+     *
+     * @param cntx
+     * @param username
+     * @param password
+     * @return
+     */
     public static boolean loginUser(Context cntx, String username, String password){
 
+        boolean status = false;
         if(cntx != null && username != null && password != null){
 
             // Build the Map needed to call our asyncMethod
@@ -39,26 +39,73 @@ public class Helper_User {
             userMap.put("user",username);
             userMap.put("password",generateHashedPassword(password));
 
-            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
                 @Override
                 protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
-                    getUserLoggedIn(result);
+
                 }
             };
-
-            asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
-
-            try {
-                // Wait 2 seconds for the login task to succeed
-                asyncHttpReq.get(3000, TimeUnit.MILLISECONDS);
-
-            } catch (InterruptedException | ExecutionException | TimeoutException e) {
-                // We will come here if we did not succeed in logging the user in
-                isUserLoggedIn = false;
-                e.printStackTrace();
-            }
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
         }
-        return isUserLoggedIn;
+
+        return status;
+    }
+
+    /**
+     *
+     * @param cntx
+     * @param username
+     * @param password
+     * @return
+     */
+    public static boolean activateUser(Context cntx, String username, String password, String activationCode){
+
+        boolean status = false;
+        if(cntx != null && username != null && password != null){
+
+            // Build the Map needed to call our asyncMethod
+            HashMap<String, Object> userMap = new HashMap();
+            userMap.put("user",username);
+            userMap.put("password",generateHashedPassword(password));
+            userMap.put("actCode",activationCode);
+
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
+                @Override
+                protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
+                    // We use the return of callHttpMethod. This callback is not used here.
+                }
+            };
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
+        }
+
+        return status;
+    }
+
+    /**
+     * Should be called in a loop every minute as long as the user uses the application
+     * @param cntx
+     * @param username
+     * @return
+     */
+    public static boolean setUserOnline(Context cntx, String username){
+    
+        boolean status = false;
+        if(cntx != null && username != null){
+
+            // Build the Map needed to call our asyncMethod
+            HashMap<String, Object> userMap = new HashMap();
+            userMap.put("user",username);
+
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
+                @Override
+                protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
+                    // We use the return of callHttpMethod. This callback is not used here.
+                }
+            };
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
+        }
+
+        return status;
     }
 
     public static String generateHashedPassword(String password) {
@@ -79,19 +126,22 @@ public class Helper_User {
         return pwSha256Base64;
     }
 
-    public static void getUserLoggedIn(ArrayList<HashMap<String, Object>> result){
+    public static boolean interpretStatus(ArrayList<HashMap<String, Object>> result){
+
+        boolean status;
 
         if(result != null && result.get(0) != null){
-            HashMap<String, Object> resMap = result.get(0);
-            if(resMap.containsKey("SUCCESSS") && resMap.get("SUCCESS") == 1){
-                isUserLoggedIn = true;
+            HashMap<String, Object> respMap = result.get(0);
+            if(respMap.containsKey("STATUS") && respMap.get("STATUS").equals("1")){
+                status = true;
             } else {
-                isUserLoggedIn = false;
+                status = false;
             }
         } else {
-            isUserLoggedIn = false;
+            status = false;
         }
-
+    return status;
     }
+
 
 }
