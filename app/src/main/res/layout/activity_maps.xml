@@ -11,10 +11,12 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/fAButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentEnd="true" />
+    <!-- android:layout_above="@+id/fAButton" -->
+    <!-- Make the mapView "fullscreen" -->
 
+
+    <!--
     <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"
@@ -22,7 +24,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/fAButton" />
+        android:layout_alignTop="@+id/fAButton" /> -->
+
+    <!-- Replace the textview with Snackbar notification - feels modern and dynamic -->
+
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -38,9 +43,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="15dp"
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_menu_directions" />
+    <!-- android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" -->
+
+    <!-- We need the marginBottom of 150dp because of the zoom-Buttons */-->
+
+
 
 
 </RelativeLayout>

@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">Join Route</string>
     <string name="title_activity_maps">Join My Route</string>
-    <!-- //HTTP_methods TODO: Wichtig!-->
+    <!-- //HTTP_methods -->
     <!-- the string's name is for our identification, the value is the corresponding php method name -->
     <string name="http_method_ActivateUser">activateUser</string>
     <string name="http_method_LoginUser">loginUser</string>
     <string name="http_method_setUserOnline">setOnline</string>
+    <string name="http_method_updateUsersPosition">updateUsersPosition</string>
+    <string name="http_method_getFriendsLatestPosition">getFriendsLatestPosition</string>
+    <string name="http_method_getDirectionsLatLng">getDirectionsLatLng</string>
     <!-- //HTTP_methods -->
 </resources>
