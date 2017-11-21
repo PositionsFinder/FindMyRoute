@@ -1,4 +1,4 @@
-# FindMyRoute
+# JoinMyRoute
 
 This App helps you to find the Direction between you and other users.
 
