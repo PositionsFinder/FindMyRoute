@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     startIntent.putExtra("user", user.getText().toString());//send Username to MapsActivity for Greeting.
                     startActivity(startIntent);
                 } else {
-                    txtMessage.setText("Wrong Username Or Password | VPN ?");
+                    txtMessage.setText("Invalid username or password. > VPN Connected ?");
                 }
 
             }
