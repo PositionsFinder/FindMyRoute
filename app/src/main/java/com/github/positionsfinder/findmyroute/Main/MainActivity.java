@@ -7,8 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,14 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.positionsfinder.findmyroute.DB_Processing.AsyncHttpReq;
+import com.github.positionsfinder.findmyroute.DB_Processing.Helper_User;
 import com.github.positionsfinder.findmyroute.Maps.MapsActivity;
 import com.github.positionsfinder.findmyroute.R;
-import com.github.positionsfinder.findmyroute.userLogin;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -66,19 +61,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             @Override
             public void onClick(View view) {
 
-                userLogin login = null;
-                try {
-                    login = new userLogin(user.getText().toString(), pass.getText().toString());
-                } catch (InterruptedException e) {
-                    System.out.println(e.getMessage());
-                    e.printStackTrace();
-                }
+                boolean success = Helper_User.loginUser(getApplicationContext(),user.getText().toString(), pass.getText().toString());
 
-                if (login.login()) {
+                if(success){
+
                     progressLogin.setVisibility(View.VISIBLE);
                     txtMessage.setText("Logged in Please Wait.");
                     Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
-                    startIntent.putExtra("username", user.getText().toString());//send Username to MapsActivity for Greeting.
+                    startIntent.putExtra("user", user.getText().toString());//send Username to MapsActivity for Greeting.
                     startActivity(startIntent);
                 } else {
                     txtMessage.setText("Wrong Username Or Password | VPN ?");
@@ -90,8 +80,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //ToDo: Search in DB nach Activation Code. When Button Pressed.
         register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                showMessage("*Still Working on It* \nPlease enter Invitation Code.");
+            public void onClick(View view) { //TODO: Mask with actioncode and username/password because we send all three together at the moment.
+                boolean success = Helper_User.activateUser(getApplicationContext(),user.getText().toString(), pass.getText().toString(), "TODO");
             }
         });
 
