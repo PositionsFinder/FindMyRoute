@@ -12,10 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by User on 14.11.2017.
- */
-
-/**
  * This is a helper class designed to take care of various operations related to the application's
  * user and their interaction with the Database. It will hide most of the code needed for the async
  * communication with the DB.

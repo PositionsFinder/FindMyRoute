@@ -33,11 +33,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/**
- * Created by Helper_User on 11.11.2017.
- *
- */
-
 public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
     private Helper_User hUser;
