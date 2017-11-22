@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.github.positionsfinder.findmyroute.R;
+import com.google.android.gms.maps.model.LatLng;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -35,8 +36,6 @@ import java.util.concurrent.TimeoutException;
 
 public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
-    private Helper_User hUser;
-    private Helper_Position hPos;
     /**
      * The String containing the BaseURL from which the DB-Server can be accessed
      */
@@ -223,9 +222,11 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
         } catch (IOException | URISyntaxException e) {
             // IF IOException occurs => Indicator for a timeout
-            e.printStackTrace();
-
-            return generateSimpleErrorResponse();
+            if(strings[1].equals("getFriendsLatestPosition")) {
+                return generateSimpleErrorResponse();
+            } else {
+                return false;
+            }
         }
         return status;
     }
@@ -339,7 +340,8 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
     /**
      * This abstract method can be used to get the response of the async process as callback.
+     * Just a comfort implementation because callHttpMethod will return the result first
      * @param result
      */
-    protected abstract void onPostPostExecute(ArrayList<HashMap<String, Object>> result);
+    protected abstract void onPostPostExecute(Object result);
 }
