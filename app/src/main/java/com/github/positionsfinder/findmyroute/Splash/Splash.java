@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.github.positionsfinder.findmyroute.DB_Processing.Helper_User;
 import com.github.positionsfinder.findmyroute.Main.MainActivity;
 import com.github.positionsfinder.findmyroute.R;
 
@@ -34,6 +35,9 @@ public class Splash extends AppCompatActivity {
 
         txtView = (TextView) findViewById(R.id.textView);
 
+
+        boolean success = Helper_User.loginUser(getApplicationContext(), "admin", "admin");
+
         /* On start, Check Internet Connection,
          * if false send a Message to MainActivity to Check Internet Connection.
          */
@@ -41,10 +45,19 @@ public class Splash extends AppCompatActivity {
         runnable = new Runnable() {
             @Override
             public void run() {
-                txtView.setText("Internet: " + internetConnection());
+                txtView.setText("Internet: " + internetConnection() + " VPN: " + success);
                 Intent home_activity = new Intent(getApplicationContext(), MainActivity.class);
-                if (!internetConnection()) {
-                    home_activity.putExtra("Status", "Check Your Internet Connection.");
+                if (!internetConnection() & !success) {
+                    SPLASH_TIME_OUT = 3000;
+                    home_activity.putExtra("No_Internet_VPN", "Check Your Internet and VPN Connection.");
+                } else if (!internetConnection()) {
+                    SPLASH_TIME_OUT = 2000;
+                    home_activity.putExtra("No_Internet", "Check Your Internet Connection.");
+                } else if (!success) {
+                    SPLASH_TIME_OUT = 2000;
+                    home_activity.putExtra("No_VPN", "Check Your VPN Connection.");
+                } else {
+                    home_activity.putExtra("OK_All", "Internet and VPN Status OK - Good to go.");
                 }
                 startActivity(home_activity);
                 finish();

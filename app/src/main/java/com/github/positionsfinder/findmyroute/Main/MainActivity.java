@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private EditText user;
     private EditText pass;
     private TextView txtMessage;
+    private TextView txtInternetVPN;
     private ProgressBar progressLogin;
 
 
@@ -46,13 +47,21 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         pass = (EditText) findViewById(R.id.editPass);
 
         txtMessage = (TextView) findViewById(R.id.textViewMessage);
+        txtInternetVPN = (TextView) findViewById(R.id.textIntVpn);
 
         progressLogin = (ProgressBar) findViewById(R.id.progressLogin);
         progressLogin.setVisibility(View.INVISIBLE);
 
-        //If Internet Connection false, show Toast-Message.
-        if (getIntent().hasExtra("Status")) {
-            Toast.makeText(this, getIntent().getExtras().getString("Status"), Toast.LENGTH_LONG).show();
+        //Internet and VPN check from Splash.class
+        if (getIntent().hasExtra("No_Internet_VPN")) {
+            Toast.makeText(this, getIntent().getExtras().getString("No_Internet_VPN"), Toast.LENGTH_LONG).show();
+        } else if (getIntent().hasExtra("No_Internet")) {
+            Toast.makeText(this, getIntent().getExtras().getString("No_Internet"), Toast.LENGTH_LONG).show();
+        } else if (getIntent().hasExtra("No_VPN")) {
+            Toast.makeText(this, getIntent().getExtras().getString("No_VPN"), Toast.LENGTH_LONG).show();
+        } else if (getIntent().hasExtra("OK_All")) {
+            Toast.makeText(this, getIntent().getExtras().getString("OK_All"), Toast.LENGTH_LONG).show();
+            txtInternetVPN.setText("Internet: OK\nVPN: OK");
         }
 
         // Check Username und Password in DB.
@@ -61,9 +70,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             @Override
             public void onClick(View view) {
 
-                boolean success = Helper_User.loginUser(getApplicationContext(),user.getText().toString(), pass.getText().toString());
+                boolean success = Helper_User.loginUser(getApplicationContext(), user.getText().toString(), pass.getText().toString());
 
-                if(success){
+                if (success) {
 
                     progressLogin.setVisibility(View.VISIBLE);
                     txtMessage.setText("Logged in Please Wait.");
@@ -71,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     startIntent.putExtra("user", user.getText().toString());//send Username to MapsActivity for Greeting.
                     startActivity(startIntent);
                 } else {
-                    txtMessage.setText("Invalid username or password. > VPN Connected ?");
+                    txtMessage.setText("Invalid username or password.");
                 }
 
             }
@@ -81,7 +90,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { //TODO: Mask with actioncode and username/password because we send all three together at the moment.
-                boolean success = Helper_User.activateUser(getApplicationContext(),user.getText().toString(), pass.getText().toString(), "TODO");
+                boolean success = Helper_User.activateUser(getApplicationContext(), user.getText().toString(), pass.getText().toString(), "omsuy");
+                showMessage("Please enter the invitation code:");
+
             }
         });
 
@@ -97,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         builder.setView(txtUrl);
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
+                toastMessage("Canceled");
             }
         });
 
@@ -147,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onRestart();
         progressLogin.setVisibility(View.INVISIBLE);
         txtMessage.setText("");
+        txtInternetVPN.setText("");
     }
 
     // Main-Activity Menu
@@ -182,5 +195,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
         startIntent.putExtra("offline", "offline");
         startActivity(startIntent);
+    }
+
+    private void toastMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

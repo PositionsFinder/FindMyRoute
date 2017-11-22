@@ -50,9 +50,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         pBar = findViewById(R.id.progressBar);
 
         // get username for greeting message
-        if (getIntent().hasExtra("username")) {
-            String msg = getIntent().getExtras().getString("username").toString();
-            Toast.makeText(this, "Hallo, " + msg + ". Wait until the Location is Loaded!", Toast.LENGTH_SHORT).show();
+        if (getIntent().hasExtra("user")) {
+            String msg = getIntent().getExtras().getString("user").toString();
+            Toast.makeText(this, "Hallo, " + msg + ". Wait until the Location is Loaded!", Toast.LENGTH_LONG).show();
         }
         // if user offline!
         if (getIntent().hasExtra("offline")) {
