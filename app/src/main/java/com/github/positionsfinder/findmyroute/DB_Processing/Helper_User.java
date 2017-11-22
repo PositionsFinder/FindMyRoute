@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 /**
  * This is a helper class designed to take care of various operations related to the application's
- * user and their interaction with the Database. It will hide most of the code needed for the async
+ * user and their interaction with the Database. It will wrap most of the code needed for the async
  * communication with the DB.
  */
 public class Helper_User {
@@ -37,7 +37,7 @@ public class Helper_User {
 
             AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
                 @Override
-                protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
+                protected void onPostPostExecute(Object result) {
 
                 }
             };
@@ -67,7 +67,7 @@ public class Helper_User {
 
             AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
                 @Override
-                protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
+                protected void onPostPostExecute(Object result) {
                     // We use the return of callHttpMethod. This callback is not used here.
                 }
             };
@@ -94,7 +94,7 @@ public class Helper_User {
 
             AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
                 @Override
-                protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
+                protected void onPostPostExecute(Object result) {
                     // We use the return of callHttpMethod. This callback is not used here.
                 }
             };
