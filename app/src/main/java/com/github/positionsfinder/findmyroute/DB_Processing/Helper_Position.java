@@ -38,6 +38,23 @@ public class Helper_Position {
         return d;
     }
 
+    public static HashMap<String, Object> getFriendsLatestPosition(Context cntx, String friendsName){
+
+        HashMap<String, Object> positionMap = null;
+
+        AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
+            @Override
+            protected void onPostPostExecute(Object result) {
+
+            }
+        };
+        HashMap<String, Object> friendMap = new HashMap<>();
+        friendMap.put("friendsName",friendsName);
+
+        positionMap = (HashMap<String, Object>) asyncHttpReq.callHttpMethod(R.string.http_method_getFriendsLatestPosition, friendMap);
+        // TODO: Either process the map right here, or let it get processed by the calling Activity?!
+        return positionMap;
+    }
 
     public static boolean updateUsersPosition(Context cntx, String username, double latitude, double longitude) {
 
@@ -52,7 +69,7 @@ public class Helper_Position {
 
             AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
                 @Override
-                protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
+                protected void onPostPostExecute(Object result) {
                     // We use the return of callHttpMethod. This callback is not used here.
                 }
             };
@@ -91,7 +108,7 @@ public class Helper_Position {
 
             AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
                 @Override
-                protected void onPostPostExecute(ArrayList<HashMap<String, Object>> result) {
+                protected void onPostPostExecute(Object result) {
                     // We use the return of callHttpMethod. This callback is not used here.
                 }
             };
@@ -103,7 +120,7 @@ public class Helper_Position {
     return status;
     }
 
-    public static ArrayList<LatLng> getLatLngFromJSON(ArrayList<HashMap<String, Object>> result){
+    public static ArrayList<LatLng> getLatLngFromJSON(Object result){
 
         System.out.println(result);
         return new ArrayList<>();
