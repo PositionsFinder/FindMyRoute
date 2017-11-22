@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//Stop Rotaion in this Activity
 
         login = (Button) findViewById(R.id.btnLogin);
         register = (Button) findViewById(R.id.btnReg);

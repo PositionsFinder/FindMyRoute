@@ -2,6 +2,7 @@ package com.github.positionsfinder.findmyroute.Splash;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
@@ -29,7 +30,7 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // Hide the Actionbar.
         getSupportActionBar().hide();
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//Stop Rotaion in this Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
