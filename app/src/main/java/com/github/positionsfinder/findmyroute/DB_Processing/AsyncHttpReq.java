@@ -97,6 +97,16 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
                     params += "&" + entry.getKey() + "=" + entry.getValue();
                 }
+                break;
+
+            case R.string.http_method_setUserOffline:
+
+                baseUrl += "user.php";
+                params = "?action=" + res.getString(methodToCall);
+
+                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
+                    params += "&" + entry.getKey() + "=" + entry.getValue();
+                }
                 //DBG: System.out.println(params);
                 break;
 

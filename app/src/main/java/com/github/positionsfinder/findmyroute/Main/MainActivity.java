@@ -24,7 +24,7 @@ import com.github.positionsfinder.findmyroute.DB_Processing.Helper_User;
 import com.github.positionsfinder.findmyroute.Maps.MapsActivity;
 import com.github.positionsfinder.findmyroute.R;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class MainActivity extends AppCompatActivity {
 
     private Button login;
     private Button register;
@@ -134,27 +134,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         dialog.closeOptionsMenu();
     }
 
-
-    @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return null;
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
-
     // if Back-Button Pressed, Load MainActivity without Text and Set Progress Invisible.
     @Override
     public void onRestart() {
@@ -201,5 +180,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private void toastMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    //ToDo: on closing set user offline.
+    protected void onDestroy() {
+        super.onDestroy();
+        //Helper_User.setUserOffline(getApplicationContext(), user.getText().toString());
+        //Update the User.php from my Folder on Server.
+
+
     }
 }

@@ -9,5 +9,6 @@
     <string name="http_method_updateUsersPosition">updateUsersPosition</string>
     <string name="http_method_getFriendsLatestPosition">getFriendsLatestPosition</string>
     <string name="http_method_getDirectionsLatLng">getDirectionsLatLng</string>
+    <string name="http_method_setUserOffline">setOffline</string>
     <!-- //HTTP_methods -->
 </resources>

@@ -104,6 +104,28 @@ public class Helper_User {
         return status;
     }
 
+    //Set user offline if app closing.
+    public static boolean setUserOffline(Context cntx, String username){
+
+        boolean status = false;
+        if(cntx != null && username != null){
+
+            // Build the Map needed to call our asyncMethod
+            HashMap<String, Object> userMap = new HashMap();
+            userMap.put("user",username);
+
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
+                @Override
+                protected void onPostPostExecute(Object result) {
+                    // We use the return of callHttpMethod. This callback is not used here.
+                }
+            };
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_setUserOffline,userMap);
+        }
+
+        return status;
+    }
+
     public static String generateHashedPassword(String password) {
 
         MessageDigest digest = null;
