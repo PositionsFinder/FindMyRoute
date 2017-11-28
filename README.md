@@ -14,4 +14,30 @@ This App helps you to find the Direction between you and other users.
   <img src="http://image.ibb.co/cfdGhm/Screenshot_20171115_174036.png" width="350"/>
 </p>
 
+How to get all commits:
+1:
+Start in ~\PortableGit\bin the Sh.exe Application 
+it will open in CMD, possiple output:
+Mosaab@DESKTOP-3RT2MR9 MINGW64 /bin (master)
+$
+
+2:
+go to Dekstop:
+Mosaab@DESKTOP-3RT2MR9 MINGW64 /bin (master)
+$ cd ~/Desktop
+
+Mosaab@DESKTOP-3RT2MR9 MINGW64 ~/Desktop
+$
+
+3: git clone our Repository URL:https://github.com/PositionsFinder/FindMyRoute
+Mosaab@DESKTOP-3RT2MR9 MINGW64 ~/Desktop
+$git clone https://github.com/PositionsFinder/FindMyRoute
+
+4:go to the Repository folder with cd FindMyRoute
+5:git log -F 
+or 
+git log 
+or 
+git log -p = with all details.
+
 (c) Asli, Mosaab - Haider, Paolo
