@@ -17,12 +17,13 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.xpath.XPathExpression;
 import org.jdom2.xpath.XPathFactory;
 
-/*
-    This Class Pars Google XML-URL directions API
-    BSP= https://maps.googleapis.com/maps/api/directions/xml?origin=47,11&destination=48.2,11.2&mode=walking
-    @return Map with Lat and Lng (String)
-    This Class use Java 8 , You may need to Synchronize the Project
-    Dummy version - Just for Test.
+/**
+ * This Class Pars Google XML-URL directions API
+ * BSP= https://maps.googleapis.com/maps/api/directions/xml?origin=47,11&destination=48.2,11.2&mode=walking
+ *
+ * @return Map with Lat and Lng (String)
+ * This Class use Java 8 , You may need to Synchronize the Project
+ * Dummy version - Just for Test.
  */
 public class ParseXML {
 
