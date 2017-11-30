@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -22,12 +23,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.positionsfinder.findmyroute.R;
+import com.github.positionsfinder.findmyroute.XmlParser.ParseXmlFile;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.jdom2.JDOMException;
+
+import java.io.File;
+import java.io.IOException;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
@@ -178,6 +185,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 break;
             case R.id.attractions:
                 Toast.makeText(this, "Tourist Attractions", Toast.LENGTH_SHORT).show();
+                try {
+                    Uri path = Uri.parse("file:///android_asset/sqlite_xml.xml");
+
+                    ParseXmlFile parseFile = new ParseXmlFile(new File("///android_asset/sqlite_xml.xml"));
+
+                } catch (JDOMException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
 
