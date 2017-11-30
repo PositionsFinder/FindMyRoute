@@ -243,6 +243,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    //ToDo: @Paolo ähnlich wie dialogWindow() für die verbindung zwischen die 2 Nutzer...
+    private void userDialogWindow(){
+
+    }
     @Override
     public void onRestart() {
         super.onRestart();
