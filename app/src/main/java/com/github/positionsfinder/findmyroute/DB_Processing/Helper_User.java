@@ -19,11 +19,11 @@ import java.util.HashMap;
 public class Helper_User {
 
     /**
-     *
-     * @param cntx
-     * @param username
-     * @param password
-     * @return
+     * Log the user in and return true if successful.
+     * @param cntx The application's context to get the resources from
+     * @param username The user's name to log in
+     * @param password The user's password
+     * @return True if successful, false otherwise
      */
     public static boolean loginUser(Context cntx, String username, String password){
 
@@ -48,11 +48,31 @@ public class Helper_User {
     }
 
     /**
-     *
-     * @param cntx
-     * @param username
-     * @param password
-     * @return
+     * This method will test if a connection to the DB can be established or not.
+     * @param cntx The application's context to get the resources from
+     * @return True if successful, false otherwise
+     */
+    public static boolean testDBConnection(Context cntx){
+
+        boolean status = false;
+        if(cntx != null){
+
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
+                @Override
+                protected void onPostPostExecute(Object result) {}
+            };
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_dbConnectionTest, null);
+        }
+
+        return status;
+    }
+
+    /**
+     *  This method will activate the user, with a new password if the submitted activation code is valid.
+     * @param cntx The application's context to get the resources from
+     * @param username The user's name to activate
+     * @param password The user's password.
+     * @return True is successful, false otherwise
      */
     public static boolean activateUser(Context cntx, String username, String password, String activationCode){
 
@@ -78,10 +98,10 @@ public class Helper_User {
     }
 
     /**
-     * Should be called in a loop every minute as long as the user uses the application
-     * @param cntx
-     * @param username
-     * @return
+     * Should be called on application's startup, or after login.
+     * @param cntx The application's context to get the resources from
+     * @param username The user's name to set online
+     * @return True if successful, false otherwise
      */
     public static boolean setUserOnline(Context cntx, String username){
     
@@ -104,7 +124,12 @@ public class Helper_User {
         return status;
     }
 
-    //Set user offline if app closing.
+    /**
+     * Sets the user offline on app closing
+     * @param cntx The application's context to get the resources from
+     * @param username The user's name to set offline
+     * @return True if successful, false otherwise
+     */
     public static boolean setUserOffline(Context cntx, String username){
 
         boolean status = false;

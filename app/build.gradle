@@ -18,11 +18,12 @@ android {
     }
     useLibrary 'org.apache.http.legacy'
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
     productFlavors {
     }
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {

@@ -6,8 +6,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.github.positionsfinder.findmyroute.R;
-import com.github.positionsfinder.findmyroute.XmlParser.ParseXML;
-import com.google.android.gms.maps.model.LatLng;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -23,7 +21,6 @@ import org.json.JSONTokener;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -57,7 +54,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
     /**
      * This method will generate the URL with the needed parameters to get results from the DB.
-     * @param methodToCall The R.string.xxxx of the method we want to use
+     * @param methodToCall The R.string.http_method_**** of the method we want to use
      * @param values A HashMap containing all parameters needed for the provided methodToCall
      * @return The status of the called Operation (boolean). In case of getFriendsLatestPosition the
      * response will be a HashMap<String, Object> containing the username, lat and lon.
@@ -96,7 +93,18 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
 
-                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
+                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password
+                    params += "&" + entry.getKey() + "=" + entry.getValue();
+                }
+                //DBG: System.out.println(params);
+                break;
+
+            case R.string.http_method_setUserOffline:
+
+                baseUrl += "user.php";
+                params = "?action=" + res.getString(methodToCall);
+
+                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName
                     params += "&" + entry.getKey() + "=" + entry.getValue();
                 }
                 //DBG: System.out.println(params);
@@ -124,10 +132,10 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 //DBG: System.out.println(params);
                 break;
 
-            case R.string.http_method_getDirectionsLatLng:
+            case R.string.http_method_dbConnectionTest:
 
-                baseUrl = (String) values.get("URL");
-                params = "";
+                baseUrl += "pos.php";
+                params = "?action=" + res.getString(methodToCall);
                 //DBG: System.out.println(params);
                 break;
 
@@ -206,6 +214,10 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                     responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
                     break;
+                case "setOffline":
+                    responseList = processResponse(strNonProcessed);
+                    status = Helper_User.interpretStatus(responseList);
+                    break;
                 case "insertPosition":
                     responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
@@ -216,6 +228,10 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                         friendsPositionMap = responseList.get(0);
                         return friendsPositionMap;
                     }
+                    break;
+                case "connTest":
+                    responseList = processResponse(strNonProcessed);
+                    status = Helper_User.interpretStatus(responseList);
                     break;
                 default:
                     break;

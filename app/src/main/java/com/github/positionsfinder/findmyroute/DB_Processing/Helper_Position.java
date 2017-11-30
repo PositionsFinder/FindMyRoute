@@ -40,6 +40,12 @@ public class Helper_Position {
         return d;
     }
 
+    /**
+     * This method will fetch the friend's latest position
+     * @param cntx The application's context to get the resources from
+     * @param friendsName The friend's name to catch the position from
+     * @return TODO: Return only LatLng, or a HashMap with LatLng + Timestamp (+ maybe other infos)??
+     */
     public static HashMap<String, Object> getFriendsLatestPosition(Context cntx, String friendsName){
 
         HashMap<String, Object> positionMap = null;
@@ -58,6 +64,15 @@ public class Helper_Position {
         return positionMap;
     }
 
+
+    /**
+     * Updates the user's position, so other users can fetch it.
+     * @param cntx The application's context to get the resources from
+     * @param username The user's name
+     * @param latitude The user's current latitude
+     * @param longitude The user's current longitude
+     * @return True if successful, false otherwise
+     */
     public static boolean updateUsersPosition(Context cntx, String username, double latitude, double longitude) {
 
         boolean status = false;
@@ -91,7 +106,7 @@ public class Helper_Position {
             // The destination of our route
             String strDest = "destination=" + dest.latitude + "," + dest.longitude;
 
-            // Sensor enabled
+            // Obsolete parameter
             String sensor = "sensor=false";
 
             // Building the parameters to the web service
