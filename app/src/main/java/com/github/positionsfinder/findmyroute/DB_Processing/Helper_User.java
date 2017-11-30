@@ -175,7 +175,7 @@ public class Helper_User {
 
         if(result != null && result.get(0) != null){
             HashMap<String, Object> respMap = result.get(0);
-            if(respMap.containsKey("STATUS") && respMap.get("STATUS").equals("1")){
+            if(respMap.containsKey("STATUS") && (respMap.get("STATUS").equals("1") || respMap.get("STATUS").equals("true"))){
                 status = true;
             } else {
                 status = false;

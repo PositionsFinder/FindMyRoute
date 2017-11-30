@@ -134,7 +134,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
             case R.string.http_method_dbConnectionTest:
 
-                baseUrl += "pos.php";
+                baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
                 //DBG: System.out.println(params);
                 break;

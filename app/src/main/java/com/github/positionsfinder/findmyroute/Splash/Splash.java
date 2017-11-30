@@ -37,7 +37,7 @@ public class Splash extends AppCompatActivity {
         txtView = (TextView) findViewById(R.id.textView);
 
 
-        boolean success = Helper_User.loginUser(getApplicationContext(), "admin", "admin");
+        boolean success = Helper_User.testDBConnection(getApplicationContext());
 
         /* On start, Check Internet Connection,
          * if false send a Message to MainActivity to Check Internet Connection.
