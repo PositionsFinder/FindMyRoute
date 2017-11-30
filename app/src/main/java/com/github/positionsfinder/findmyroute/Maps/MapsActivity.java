@@ -12,6 +12,7 @@ import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -49,6 +50,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ProgressBar pBar;
     private boolean hidePartner = false;
     private LatLng myPos;
+    private FloatingActionButton fabutton;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -59,7 +61,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
         //info = (TextView) findViewById(R.id.info);
-        pBar = findViewById(R.id.progressBar);
+        pBar = (ProgressBar) findViewById(R.id.progressBar);
+        fabutton = (FloatingActionButton) findViewById(R.id.fAButton);
 
         // get username for greeting message
         if (getIntent().hasExtra("user")) {
@@ -71,6 +74,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             hidePartner = true;
         }
 
+        fabutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

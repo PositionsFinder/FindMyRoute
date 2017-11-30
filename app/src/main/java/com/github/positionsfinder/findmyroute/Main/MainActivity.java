@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText user;
     private EditText pass;
     private TextView txtMessage;
-    private TextView txtInternetVPN;
     private ProgressBar progressLogin;
 
 
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.editPass);
 
         txtMessage = (TextView) findViewById(R.id.textViewMessage);
-        txtInternetVPN = (TextView) findViewById(R.id.textIntVpn);
 
         progressLogin = (ProgressBar) findViewById(R.id.progressLogin);
         progressLogin.setVisibility(View.INVISIBLE);
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, getIntent().getExtras().getString("No_VPN"), Toast.LENGTH_LONG).show();
         } else if (getIntent().hasExtra("OK_All")) {
             Toast.makeText(this, getIntent().getExtras().getString("OK_All"), Toast.LENGTH_LONG).show();
-            txtInternetVPN.setText("Internet: OK\nVPN: OK");
         }
 
         // Check Username und Password in DB.
@@ -140,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         progressLogin.setVisibility(View.INVISIBLE);
         txtMessage.setText("");
-        txtInternetVPN.setText("");
     }
 
     // Main-Activity Menu

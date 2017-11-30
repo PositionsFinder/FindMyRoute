@@ -870,22 +870,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4_values-hdpi-v4.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\27e0c3478b0c4ada84e004a0d0996bd0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "13",
-                        "endOffsets": "327"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\values-mn_values-mn.arsc.flat",
             "map": [
                 {
@@ -954,6 +938,22 @@
                         "startOffsets": "4599,4706,4820,4937,5049,5149,5233,5329,5441,5536,5630,5720,5812,5925,6038,6128,6214,6298,6403,6513,6599",
                         "endColumns": "106,113,116,111,99,83,95,111,94,93,89,91,112,112,89,85,83,104,109,85,98",
                         "endOffsets": "4701,4815,4932,5044,5144,5228,5324,5436,5531,5625,5715,5807,5920,6033,6123,6209,6293,6398,6508,6594,6693"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\values-hdpi-v4_values-hdpi-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\27e0c3478b0c4ada84e004a0d0996bd0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
                     }
                 }
             ]
@@ -1447,21 +1447,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\values-v18_values-v18.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\27e0c3478b0c4ada84e004a0d0996bd0\\res\\values-v18\\values-v18.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "48",
-                        "endOffsets": "99"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\values-sl_values-sl.arsc.flat",
             "map": [
                 {
@@ -1530,6 +1515,21 @@
                         "startOffsets": "4644,4752,4883,5013,5143,5237,5329,5429,5536,5632,5725,5825,5918,6030,6145,6232,6320,6403,6507,6612,6698",
                         "endColumns": "107,130,129,129,93,91,99,106,95,92,99,92,111,114,86,87,82,103,104,85,93",
                         "endOffsets": "4747,4878,5008,5138,5232,5324,5424,5531,5627,5720,5820,5913,6025,6140,6227,6315,6398,6502,6607,6693,6787"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Java\\app\\build\\intermediates\\res\\merged\\debug\\values-v18_values-v18.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\27e0c3478b0c4ada84e004a0d0996bd0\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
                     }
                 }
             ]
