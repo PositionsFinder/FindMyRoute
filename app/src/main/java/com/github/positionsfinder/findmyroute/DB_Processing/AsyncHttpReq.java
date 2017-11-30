@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.github.positionsfinder.findmyroute.R;
+import com.github.positionsfinder.findmyroute.XmlParser.ParseXML;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.apache.http.HttpResponse;
@@ -22,6 +23,7 @@ import org.json.JSONTokener;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -90,16 +92,6 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 break;
 
             case R.string.http_method_setUserOnline:
-
-                baseUrl += "user.php";
-                params = "?action=" + res.getString(methodToCall);
-
-                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
-                    params += "&" + entry.getKey() + "=" + entry.getValue();
-                }
-                break;
-
-            case R.string.http_method_setUserOffline:
 
                 baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
@@ -195,37 +187,36 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
             // Fire our request
             HttpResponse response = httpClient.execute(httpRequest);
 
-            // Build a single string from the HTTP response
+            /**
+             * The glued HTTP-Response as string.
+             */
             String strNonProcessed = buildString(response);
             ArrayList<HashMap<String, Object>> responseList;
 
             switch(methodCalled){
                 case "activateUser":
-                    responseList = processResponse(strNonProcessed,false);
+                    responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
                     break;
                 case "loginUser":
-                    responseList = processResponse(strNonProcessed,false);
+                    responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
                     break;
                 case "setOnline":
-                    responseList = processResponse(strNonProcessed,false);
+                    responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
                     break;
                 case "insertPosition":
-                    responseList = processResponse(strNonProcessed,false);
+                    responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
                     break;
                 case "getFriendsLatestPosition":
-                    responseList = processResponse(strNonProcessed,false);
+                    responseList = processResponse(strNonProcessed);
                     if(responseList != null && responseList.get(0) != null){
                         friendsPositionMap = responseList.get(0);
                         return friendsPositionMap;
                     }
                     break;
-                case "getDirectionsLatLng":
-                    responseList = processResponse(strNonProcessed,true);
-                    return null;
                 default:
                     break;
             }
@@ -257,8 +248,6 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
             int i = 0;
             while ((line = inReader.readLine()) != null) {
                 buffer.append(line);
-                i += 1;
-                //break; // Has only one line but that's the standard approach
             }
 
             return buffer.toString();
@@ -275,7 +264,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
      * @param response
      * @return
      */
-    private ArrayList<HashMap<String, Object>> processResponse(String response, boolean directions){
+    private ArrayList<HashMap<String, Object>> processResponse(String response){
 
         ArrayList<HashMap<String, Object>> respList = new ArrayList<HashMap<String, Object>>();
 
@@ -309,16 +298,9 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                     }
                 } else if (jsonTypeIndicator instanceof JSONObject) { // Case JSONObject:
 
+                    Log.e("*** ERR:"," The JSON returned does not contain an array. \n" +
+                            "We currently have no method to handle this situation..");
 
-                    if(directions) {
-                        // TODO: JDOM parsing hier rein
-                        System.out.println("***** " + response);
-
-                    } else {
-                        Log.e("*** ERR:"," The JSON returned does not contain an array. \n" +
-                                "We currently have no method to handle this situation..");
-
-                    }
                 }
 
             } catch (JSONException e) {
@@ -328,7 +310,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
             return generateSimpleErrorResponse();
         }
 
-    return respList;
+        return respList;
     }
 
     private ArrayList<HashMap<String, Object>> generateSimpleErrorResponse(){

@@ -3,6 +3,7 @@ package com.github.positionsfinder.findmyroute.Maps;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -18,10 +19,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.positionsfinder.findmyroute.DB_Processing.Helper_Position;
 import com.github.positionsfinder.findmyroute.R;
 import com.github.positionsfinder.findmyroute.XmlParser.ParseXmlFile;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,6 +39,8 @@ import org.jdom2.JDOMException;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
@@ -43,7 +49,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LocationManager locationManager;
     private ProgressBar pBar;
     private boolean hidePartner = false;
-
+    private LatLng myPos;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -127,7 +133,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //info.setText(" Long: " + location.getLongitude() + " Lat: " + location.getLatitude());
 
         mMap.clear();
-        LatLng myPos = new LatLng(location.getLatitude(), location.getLongitude());
+        myPos = new LatLng(location.getLatitude(), location.getLongitude());
         mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setRotateGesturesEnabled(true);
@@ -185,20 +191,42 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 break;
             case R.id.attractions:
                 Toast.makeText(this, "Tourist Attractions", Toast.LENGTH_SHORT).show();
-                try {
-                    Uri path = Uri.parse("file:///android_asset/sqlite_xml.xml");
+                Helper_Position.drawDirectionsLatLng(mMap, myPos, new LatLng(48.16989342,11.55152705));
+//                try {
 
-                    ParseXmlFile parseFile = new ParseXmlFile(new File("///android_asset/sqlite_xml.xml"));
+                AssetManager am = getAssets();
+      /*          try {
+                    InputStream inputStream =  am.open("sqlite_xml.xml");
+                    ParseXmlFile x = new ParseXmlFile(inputStream);
 
-                } catch (JDOMException e) {
+
+                    ListView lView = new ListView(this);
+                    ArrayList<String> lStr =  x.getDirNames();
+                    ArrayAdapter lAdap = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,lStr);
+                    lView.setAdapter(lAdap);
+                    lView.setFocusableInTouchMode(true);
+
+                    setContentView(lView);
+
+                } catch (IOException | JDOMException e) {
                     e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                }*/
+
+
+                // ParseXmlFile parseFile = new ParseXmlFile(new File("///android_asset/sqlite_xml.xml"));
+
+                //   } catch (JDOMException | IOException e) {
+                //       e.printStackTrace();
+                //   }
                 break;
         }
 
         return true;
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
     }
 
 }

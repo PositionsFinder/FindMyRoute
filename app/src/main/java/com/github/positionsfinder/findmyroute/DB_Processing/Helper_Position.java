@@ -3,6 +3,8 @@ package com.github.positionsfinder.findmyroute.DB_Processing;
 import android.content.Context;
 
 import com.github.positionsfinder.findmyroute.R;
+import com.github.positionsfinder.findmyroute.XmlParser.ParseXML;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.ParseException;
@@ -79,12 +81,9 @@ public class Helper_Position {
         return status;
     }
 
-    public static Object getDirectionsLatLng(Context cntx, LatLng start, LatLng dest) {
+    public static void drawDirectionsLatLng(GoogleMap map, LatLng start, LatLng dest) {
 
-        //ArrayList<LatLng> status = null;
-
-        Object status = null;
-        if (cntx != null && start != null && dest != null) {
+        if (start != null && dest != null) {
 
             // The start of our route
             String strStart = "origin=" + start.latitude + "," + start.longitude;
@@ -99,25 +98,12 @@ public class Helper_Position {
             String params = strStart + "&" + strDest + "&" + sensor;
 
             // Building the url to the web service
-            String url = "https://maps.googleapis.com/maps/api/directions/json?mode=walking&" + params;
-
+            String url = "https://maps.googleapis.com/maps/api/directions/xml?mode=walking&" + params;// +"&key=AIzaSyBJdqWTAf4e5Ty2590JjFF39gg-ey4YVoE";
             // Build the Map needed to call our asyncMethod
 
-            HashMap<String, Object> paramMap = new HashMap();
-            paramMap.put("URL", url);
-
-            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
-                @Override
-                protected void onPostPostExecute(Object result) {
-                    // We use the return of callHttpMethod. This callback is not used here.
-                }
-            };
-
-            status =  asyncHttpReq.callHttpMethod(R.string.http_method_getDirectionsLatLng, paramMap);
-
+            ParseXML xmlParser = new ParseXML(map);
+            xmlParser.execute(url);
         }
-
-    return status;
     }
 
     public static ArrayList<LatLng> getLatLngFromJSON(Object result){
