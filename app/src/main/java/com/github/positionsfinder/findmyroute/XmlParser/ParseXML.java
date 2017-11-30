@@ -157,10 +157,15 @@ public class ParseXML extends AsyncTask<String, Void, ArrayList<LatLng>> {
     protected void onPostExecute(ArrayList<LatLng> result) {
 
         PolylineOptions polylineOptions = new PolylineOptions();
-        polylineOptions.width(5);
-
-
+        polylineOptions.width(30);
         polylineOptions.add(result.toArray(new LatLng[result.size()]));
+
+        System.out.println(polylineOptions.getEndCap());
+
+        if (result != null && !result.isEmpty()) {
+            LatLng item = result.get(result.size() - 1);
+            map.addMarker(new MarkerOptions().position(item).title("Ziel!"));
+        }
 
 
         map.addPolyline(polylineOptions);

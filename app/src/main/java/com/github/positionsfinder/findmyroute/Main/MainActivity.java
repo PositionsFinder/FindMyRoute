@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             // Use Offline Tab - Open Map-Activity with Reduced Menu-Options. Using @see offlineSurfe()
             case R.id.useoffline:
-                Toast.makeText(this, "Use Offline", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Offline: Please wait until the Location is Loaded!", Toast.LENGTH_LONG).show();
                 offlineSurfe();
                 break;
         }

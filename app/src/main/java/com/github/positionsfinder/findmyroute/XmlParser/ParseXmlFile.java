@@ -2,6 +2,8 @@ package com.github.positionsfinder.findmyroute.XmlParser;
 
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -30,7 +32,6 @@ public class ParseXmlFile {
     public ParseXmlFile(InputStream file) throws JDOMException, IOException {
         this.file = file;
         readFile = readFile();
-        searchInFile();
     }
 
     private synchronized XPathFactory readFile() throws MalformedURLException, JDOMException, IOException {
@@ -39,46 +40,53 @@ public class ParseXmlFile {
         return XPathFactory.instance();
     }
 
-    private void searchInFile() {
-//        final Map<String, String> allStyleName = new HashMap<>();
+    public ArrayList<String> getDirectionName() {
+        final ArrayList<String> directionNames = new ArrayList<>();
         XPathExpression<Element> styleName = readFile.compile("//root/row", Filters.element());
-//        styleName.evaluate(document).stream().forEach(x -> {
-//            allStyleName.put(x.getChild("LAT").getValue(), x.getChild("LNG").getValue());
-//        });
-//        allStyleName.forEach((k, v) -> System.out.println("Lat : " + k + " Lng : " + v));
         for (int i = 0; i < styleName.evaluate(document).size(); i++) {
             Element element = styleName.evaluate(document).get(i);
             try {
-                double lat = Double.parseDouble(element.getChild("LAT").getValue());
-                double lng = Double.parseDouble(element.getChild("LNG").getValue());
-
-                System.out.println(lat + " " + lng);
-            } catch (NumberFormatException e) {
-                System.out.println(e.getMessage());
-
-            }
-        }
-
-    }
-
-    public ArrayList<String> getDirNames() {
-        final ArrayList<String> dirNames = new ArrayList<>();
-        XPathExpression<Element> styleName = readFile.compile("//root/row", Filters.element());
-//        styleName.evaluate(document).stream().forEach(x -> {
-//            allStyleName.put(x.getChild("LAT").getValue(), x.getChild("LNG").getValue());
-//        });
-//        allStyleName.forEach((k, v) -> System.out.println("Lat : " + k + " Lng : " + v));
-        for (int i = 0; i < styleName.evaluate(document).size(); i++) {
-            Element element = styleName.evaluate(document).get(i);
-            try {
-                dirNames.add(element.getChild("NAME").getValue());
+                directionNames.add(element.getChild("NAME").getValue());
             } catch (NumberFormatException e) {
                 System.out.println(e.getMessage());
             }
         }
 
-        return dirNames;
+        return directionNames;
 
     }
 
+    public String getDescription(String name) {
+     String description ="";
+        XPathExpression<Element> styleName = readFile.compile("//root/row", Filters.element());
+        for (int i = 0; i < styleName.evaluate(document).size(); i++) {
+            Element element = styleName.evaluate(document).get(i);
+            try {
+                if(element.getChild("NAME").getValue().equals(name)){
+                    description = element.getChild("Description").getValue();
+                }
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        return description;
+
+    }
+
+    public LatLng getLatLng(String name) {
+        LatLng latlng = null;
+        XPathExpression<Element> styleName = readFile.compile("//root/row", Filters.element());
+        for (int i = 0; i < styleName.evaluate(document).size(); i++) {
+            Element element = styleName.evaluate(document).get(i);
+            try {
+                if(element.getChild("NAME").getValue().equals(name)){
+                    latlng  = new LatLng(Double.parseDouble(element.getChild("LAT").getValue().toString()),Double.parseDouble(element.getChild("LNG").getValue().toString()));
+                }
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return latlng;
+    }
 }

@@ -5,55 +5,48 @@
     <NAME>Frauenkirche</NAME>
     <LAT>48.138631</LAT>
     <LNG>11.5736254</LNG>
-    <Description>Gotische Kirche mit 2 Türmen und berühmtem Teufelstritt, die 1945 beschädigt und später restauriert wurde.
-</Description>
+    <Description>Gotische Kirche mit 2 Türmen und berühmtem Teufelstritt, die 1945 beschädigt und später restauriert wurde.</Description>
   </row>
   <row>
     <ID>2</ID>
     <NAME>Schloss Nymphenburg</NAME>
     <LAT>48.1582711</LAT>
     <LNG>11.5011256</LNG>
-    <Description>200 Hektar großes Palastgelände mit Rokokodekoration, Kutschensammlung und symmetrischen Barockgärten.
-</Description>
+    <Description>200 Hektar großes Palastgelände mit Rokokodekoration, Kutschensammlung und symmetrischen Barockgärten.</Description>
   </row>
   <row>
     <ID>3</ID>
     <NAME>Marienplatz</NAME>
     <LAT>48.1373968</LAT>
     <LNG>11.5732598</LNG>
-    <Description>Gut angebundener Platz in der Innenstadt mit der Kirche St. Peter und Paul, 2 Rathäusern &amp; Spielzeugmuseum.
-</Description>
+    <Description>Gut angebundener Platz in der Innenstadt mit der Kirche St. Peter und Paul, 2 Rathäusern &amp; Spielzeugmuseum.</Description>
   </row>
   <row>
     <ID>4</ID>
-    <NAME>Allianz Arena
-</NAME>
+    <NAME>Allianz Arena</NAME>
     <LAT>48.2188033</LAT>
     <LNG>11.6225185</LNG>
-    <Description>2006 erbautes Fußballstadion des FC Bayern München mit Platz für 66.000 Zuschauer, mit Museum und Führungen.
-</Description>
+    <Description>2006 erbautes Fußballstadion des FC Bayern München mit Platz für 66.000 Zuschauer, mit Museum und Führungen.</Description>
   </row>
   <row>
     <ID>5</ID>
     <NAME>Stachus</NAME>
     <LAT>48.1395385</LAT>
     <LNG>11.5636643</LNG>
-    <Description>Stachus...</Description>
+    <Description>Der Karlsplatz, auch Stachus genannt, ist ein Platz im Zentrum Münchens.</Description>
   </row>
   <row>
     <ID>6</ID>
     <NAME>Olympiapark </NAME>
     <LAT>48.1754682</LAT>
     <LNG>11.5496083</LNG>
-    <Description>Weitläufiger olympischer Komplex mit Stadion, Führungen, Sea Life Center, Rockmuseum und Konzerten.
-</Description>
+    <Description>Weitläufiger olympischer Komplex mit Stadion, Führungen, Sea Life Center, Rockmuseum und Konzerten.</Description>
   </row>
   <row>
     <ID>7</ID>
     <NAME>Alten Pinakothe</NAME>
     <LAT>48.1482949</LAT>
     <LNG>11.567796</LNG>
-    <Description>Umfangreiche Kunstsammlung mit etwa 900 Gemälden in großem neoklassizistischen Gebäude.
-</Description>
+    <Description>Umfangreiche Kunstsammlung mit etwa 900 Gemälden in großem neoklassizistischen Gebäude.</Description>
   </row>
 </root>

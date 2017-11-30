@@ -1,28 +1,28 @@
 package com.github.positionsfinder.findmyroute.Maps;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.positionsfinder.findmyroute.DB_Processing.Helper_Position;
@@ -37,7 +37,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.jdom2.JDOMException;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -176,9 +175,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-
-        int id = item.getItemId();
-        switch (id) {
+        switch (item.getItemId()) {
             case R.id.partner:
                 if (hidePartner) {
                     Toast.makeText(this, "Please Login first...", Toast.LENGTH_SHORT).show();
@@ -187,41 +184,63 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
                 break;
             case R.id.statistic:
-                Toast.makeText(this, "Statistic", Toast.LENGTH_SHORT).show();
+                if (hidePartner) {
+                    Toast.makeText(this, "Please Login first...", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Statistic", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.attractions:
+                dialogWindow();
                 Toast.makeText(this, "Tourist Attractions", Toast.LENGTH_SHORT).show();
-                Helper_Position.drawDirectionsLatLng(mMap, myPos, new LatLng(48.16989342,11.55152705));
-//                try {
-
-                AssetManager am = getAssets();
-      /*          try {
-                    InputStream inputStream =  am.open("sqlite_xml.xml");
-                    ParseXmlFile x = new ParseXmlFile(inputStream);
-
-
-                    ListView lView = new ListView(this);
-                    ArrayList<String> lStr =  x.getDirNames();
-                    ArrayAdapter lAdap = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,lStr);
-                    lView.setAdapter(lAdap);
-                    lView.setFocusableInTouchMode(true);
-
-                    setContentView(lView);
-
-                } catch (IOException | JDOMException e) {
-                    e.printStackTrace();
-                }*/
-
-
-                // ParseXmlFile parseFile = new ParseXmlFile(new File("///android_asset/sqlite_xml.xml"));
-
-                //   } catch (JDOMException | IOException e) {
-                //       e.printStackTrace();
-                //   }
                 break;
         }
-
         return true;
+    }
+
+    private void dialogWindow() {
+        try {
+            AlertDialog.Builder builderSingle = new AlertDialog.Builder(MapsActivity.this);
+            builderSingle.setTitle("Select an Attraction");
+
+            AssetManager am = getAssets();
+            InputStream inputStream = am.open("sqlite_xml.xml");
+            ParseXmlFile parsedFile = new ParseXmlFile(inputStream);
+
+            ArrayList<String> lStr = parsedFile.getDirectionName();
+
+            final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MapsActivity.this, android.R.layout.select_dialog_singlechoice, lStr);
+
+            builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String strName = arrayAdapter.getItem(which);
+                    AlertDialog.Builder builderInner = new AlertDialog.Builder(MapsActivity.this);
+                    builderInner.setMessage(parsedFile.getDescription(strName));
+                    builderInner.setTitle("Route to " + strName);
+                    builderInner.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Helper_Position.drawDirectionsLatLng(mMap, myPos, (parsedFile.getLatLng(strName)));
+                            dialog.dismiss();
+                        }
+                    });
+                    builderInner.show();
+                }
+            });
+
+            builderSingle.show();
+
+        } catch (JDOMException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
