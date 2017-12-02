@@ -19,133 +19,129 @@ import java.util.HashMap;
 public class Helper_User {
 
     /**
-     * Log the user in and return true if successful.
-     * @param cntx The application's context to get the resources from
-     * @param username The user's name to log in
-     * @param password The user's password
-     * @return True if successful, false otherwise
+     * @param cntx
+     * @param username
+     * @param password
+     * @return
      */
-    public static boolean loginUser(Context cntx, String username, String password){
+    public static boolean loginUser(Context cntx, String username, String password) {
 
         boolean status = false;
-        if(cntx != null && username != null && password != null){
+        if (cntx != null && username != null && password != null) {
 
             // Build the Map needed to call our asyncMethod
             HashMap<String, Object> userMap = new HashMap();
-            userMap.put("user",username);
-            userMap.put("password",generateHashedPassword(password));
+            userMap.put("user", username);
+            userMap.put("password", generateHashedPassword(password));
 
-            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
                 @Override
                 protected void onPostPostExecute(Object result) {
 
                 }
             };
-            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser, userMap);
         }
 
         return status;
     }
 
-    /**
-     * This method will test if a connection to the DB can be established or not.
-     * @param cntx The application's context to get the resources from
-     * @return True if successful, false otherwise
-     */
-    public static boolean testDBConnection(Context cntx){
+    public static boolean checkCodeIfValid(Context cntx, String activationCode) {
 
         boolean status = false;
-        if(cntx != null){
 
-            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
-                @Override
-                protected void onPostPostExecute(Object result) {}
-            };
-            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_dbConnectionTest, null);
-        }
+
+        // Build the Map needed to call our asyncMethod
+        HashMap<String, Object> userMap = new HashMap();
+        userMap.put("invCode", activationCode);
+
+
+        AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
+            @Override
+            protected void onPostPostExecute(Object result) {
+
+            }
+        };
+        status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_checkCodeIfValid, userMap);
+        System.out.println("Status : "+status);
 
         return status;
     }
 
     /**
-     *  This method will activate the user, with a new password if the submitted activation code is valid.
-     * @param cntx The application's context to get the resources from
-     * @param username The user's name to activate
-     * @param password The user's password.
-     * @return True is successful, false otherwise
+     * @param cntx
+     * @param username
+     * @param password
+     * @return
      */
-    public static boolean activateUser(Context cntx, String username, String password, String activationCode){
+    public static boolean activateUser(Context cntx, String username, String password, String activationCode) {
 
         boolean status = false;
-        if(cntx != null && username != null && password != null){
+        if (cntx != null && username != null && password != null) {
 
             // Build the Map needed to call our asyncMethod
             HashMap<String, Object> userMap = new HashMap();
-            userMap.put("user",username);
-            userMap.put("password",generateHashedPassword(password));
-            userMap.put("actCode",activationCode);
+            userMap.put("user", username);
+            userMap.put("password", generateHashedPassword(password));
+            userMap.put("actCode", activationCode);
 
-            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
-                @Override
-                protected void onPostPostExecute(Object result) {
-                    // We use the return of callHttpMethod. This callback is not used here.
-                }
-            };
-            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
-        }
-
-        return status;
-    }
-
-    /**
-     * Should be called on application's startup, or after login.
-     * @param cntx The application's context to get the resources from
-     * @param username The user's name to set online
-     * @return True if successful, false otherwise
-     */
-    public static boolean setUserOnline(Context cntx, String username){
-    
-        boolean status = false;
-        if(cntx != null && username != null){
-
-            // Build the Map needed to call our asyncMethod
-            HashMap<String, Object> userMap = new HashMap();
-            userMap.put("user",username);
-
-            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
                 @Override
                 protected void onPostPostExecute(Object result) {
                     // We use the return of callHttpMethod. This callback is not used here.
                 }
             };
-            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser, userMap);
         }
 
         return status;
     }
 
     /**
-     * Sets the user offline on app closing
-     * @param cntx The application's context to get the resources from
-     * @param username The user's name to set offline
-     * @return True if successful, false otherwise
+     * Should be called in a loop every minute as long as the user uses the application
+     *
+     * @param cntx
+     * @param username
+     * @return
      */
-    public static boolean setUserOffline(Context cntx, String username){
+    public static boolean setUserOnline(Context cntx, String username) {
 
         boolean status = false;
-        if(cntx != null && username != null){
+        if (cntx != null && username != null) {
 
             // Build the Map needed to call our asyncMethod
             HashMap<String, Object> userMap = new HashMap();
-            userMap.put("user",username);
+            userMap.put("user", username);
 
-            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx){
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
                 @Override
                 protected void onPostPostExecute(Object result) {
                     // We use the return of callHttpMethod. This callback is not used here.
                 }
             };
-            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_setUserOffline,userMap);
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser, userMap);
+        }
+
+        return status;
+    }
+
+    //Set user offline if app closing.
+    public static boolean setUserOffline(Context cntx, String username) {
+
+        boolean status = false;
+        if (cntx != null && username != null) {
+
+            // Build the Map needed to call our asyncMethod
+            HashMap<String, Object> userMap = new HashMap();
+            userMap.put("user", username);
+
+            AsyncHttpReq asyncHttpReq = new AsyncHttpReq(cntx) {
+                @Override
+                protected void onPostPostExecute(Object result) {
+                    // We use the return of callHttpMethod. This callback is not used here.
+                }
+            };
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_setUserOffline, userMap);
         }
 
         return status;
@@ -158,7 +154,8 @@ public class Helper_User {
 
         try {
             digest = MessageDigest.getInstance("SHA-256");
-        } catch (NoSuchAlgorithmException e) {}
+        } catch (NoSuchAlgorithmException e) {
+        }
 
         if (digest != null) {
             byte[] hash = digest.digest((password.getBytes(StandardCharsets.UTF_8)));
@@ -169,13 +166,13 @@ public class Helper_User {
         return pwSha256Base64;
     }
 
-    public static boolean interpretStatus(ArrayList<HashMap<String, Object>> result){
+    public static boolean interpretStatus(ArrayList<HashMap<String, Object>> result) {
 
         boolean status;
 
-        if(result != null && result.get(0) != null){
+        if (result != null && result.get(0) != null) {
             HashMap<String, Object> respMap = result.get(0);
-            if(respMap.containsKey("STATUS") && (respMap.get("STATUS").equals("1") || respMap.get("STATUS").equals("true"))){
+            if (respMap.containsKey("STATUS") && respMap.get("STATUS").equals("1")) {
                 status = true;
             } else {
                 status = false;
@@ -183,7 +180,7 @@ public class Helper_User {
         } else {
             status = false;
         }
-    return status;
+        return status;
     }
 
 

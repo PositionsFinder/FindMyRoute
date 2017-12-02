@@ -88,12 +88,16 @@ public class MainActivity extends AppCompatActivity {
         //ToDo: Search in DB nach Activation Code. When Button Pressed.
         register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { //TODO: Mask with actioncode and username/password because we send all three together at the moment.
-                boolean success = Helper_User.activateUser(getApplicationContext(), user.getText().toString(), pass.getText().toString(), "omsuy");
+            public void onClick(View view) { //ToDo: Mask with actioncode and username/password because we send all three together at the moment.
+
+                boolean success = Helper_User.checkCodeIfValid(getApplicationContext(), "omsuy");
+                Toast.makeText(MainActivity.this, success+"", Toast.LENGTH_LONG).show();
+
                 showMessage("Please enter the invitation code:");
 
             }
         });
+
 
 
     }
@@ -126,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getInviteCode(String s) {
+
         ProgressDialog dialog = ProgressDialog.show(this, "",
                 "Loading. Please wait...", true);
         dialog.closeOptionsMenu();
