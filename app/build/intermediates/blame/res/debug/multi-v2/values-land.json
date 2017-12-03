@@ -1,10 +1,44 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\temp\\FindMyRoute3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "C:\\Java\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.0.0.aar\\73e9e90a16e496ec5b24aee6717e7992\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.6.2.aar\\135c6a9a8ae4c545fa729b36ef64fdc2\\res\\values-land\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "0,0,0,0,0,0",
+                        "startOffsets": "183,264,344,414,483,578",
+                        "endColumns": "80,79,69,68,94,90",
+                        "endOffsets": "263,343,413,482,577,668"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "328,413,497,571,644,743",
+                        "endColumns": "84,83,73,72,98,94",
+                        "endOffsets": "408,492,566,639,738,833"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-26.0.0.aar\\e8f33b400b1fca8f9145adfc06bad63f\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,130,208",
+                        "endColumns": "74,77,74",
+                        "endOffsets": "125,203,278"
+                    },
+                    "to": {
+                        "startLines": "12,13,14",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "838,913,991",
+                        "endColumns": "74,77,74",
+                        "endOffsets": "908,986,1061"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.0.0.aar\\fa6f293bb4bd6710a479d3c6dd26c965\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,39 +48,22 @@
                         "endOffsets": "232"
                     },
                     "to": {
-                        "startLines": "9",
+                        "startLines": "15",
                         "startColumns": "4",
-                        "startOffsets": "556",
-                        "endLines": "12",
+                        "startOffsets": "1066",
+                        "endLines": "18",
                         "endColumns": "12",
-                        "endOffsets": "733"
+                        "endOffsets": "1243"
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\08320f8845d986671dcbf952d4ee3984\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\e947aebba224c16491702f639c4e3630\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
                         "startOffsets": "55,125,189,260",
                         "endColumns": "69,63,70,67",
                         "endOffsets": "120,184,255,323"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-26.0.0.aar\\67796f7bbed300a94a45bd9c8961ab09\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,130,208",
-                        "endColumns": "74,77,74",
-                        "endOffsets": "125,203,278"
-                    },
-                    "to": {
-                        "startLines": "6,7,8",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "328,403,481",
-                        "endColumns": "74,77,74",
-                        "endOffsets": "398,476,551"
                     }
                 }
             ]

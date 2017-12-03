@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\temp\\FindMyRoute3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
+            "outputFile": "C:\\Java\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\08320f8845d986671dcbf952d4ee3984\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\e947aebba224c16491702f639c4e3630\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

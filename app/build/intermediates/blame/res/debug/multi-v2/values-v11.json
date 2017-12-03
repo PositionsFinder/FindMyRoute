@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\temp\\FindMyRoute3\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "C:\\Java\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\08320f8845d986671dcbf952d4ee3984\\res\\values-v11\\values-v11.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-appinvite-11.6.2.aar\\2ba0e2401e2f3c9b1355f4c26a46fb9e\\res\\values-v11\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "172",
+                        "endLines": "5",
+                        "endColumns": "8",
+                        "endOffsets": "293"
+                    },
+                    "to": {
+                        "startLines": "192",
+                        "startColumns": "4",
+                        "startOffsets": "14077",
+                        "endLines": "193",
+                        "endColumns": "8",
+                        "endOffsets": "14198"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\e947aebba224c16491702f639c4e3630\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
