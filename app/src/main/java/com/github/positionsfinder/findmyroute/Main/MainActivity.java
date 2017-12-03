@@ -9,8 +9,13 @@ import android.content.Loader;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
+import android.text.InputType;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -85,13 +90,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //ToDo: Search in DB nach Activation Code. When Button Pressed.
         register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { //TODO: Mask with actioncode and username/password because we send all three together at the moment.
-                boolean success = Helper_User.activateUser(getApplicationContext(), user.getText().toString(), pass.getText().toString(), "omsuy");
+            public void onClick(View view) {
                 showMessage("Please enter the invitation code:");
-
             }
         });
 
@@ -110,12 +112,22 @@ public class MainActivity extends AppCompatActivity {
                 toastMessage("Canceled");
             }
         });
-
-
-        //ToDo: Search in DB nach Activation Code.
-        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Search", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                getInviteCode(txtUrl.getText().toString());
+                // getInviteCode(txtUrl.getText().toString());
+                boolean success = Helper_User.checkCodeIfValid(getApplicationContext(), txtUrl.getText().toString());
+                if (success) {
+                    final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Invite Code Valid! Username:test1 Password:test1", Snackbar.LENGTH_INDEFINITE);
+                    snackBar.setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            snackBar.dismiss();
+                        }
+                    });
+                    snackBar.show();
+                } else {
+                    Snackbar.make(findViewById(android.R.id.content), "Invite Code invalid!, Please try Again.", Snackbar.LENGTH_LONG).show();
+                }
                 dialog.dismiss();
             }
         });
@@ -123,12 +135,6 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
-    }
-
-    private void getInviteCode(String s) {
-        ProgressDialog dialog = ProgressDialog.show(this, "",
-                "Loading. Please wait...", true);
-        dialog.closeOptionsMenu();
     }
 
     // if Back-Button Pressed, Load MainActivity without Text and Set Progress Invisible.
@@ -178,12 +184,9 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    //ToDo: on closing set user offline.
     protected void onDestroy() {
         super.onDestroy();
-        //Helper_User.setUserOffline(getApplicationContext(), user.getText().toString());
-        //Update the User.php from my Folder on Server.
-
+        Helper_User.setUserOffline(getApplicationContext(), user.getText().toString());
 
     }
 }

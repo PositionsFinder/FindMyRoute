@@ -70,16 +70,21 @@ public class ParseXML extends AsyncTask<String, Void, ArrayList<LatLng>> {
 
         ArrayList<LatLng> latLngs = new ArrayList<>();
 
-        XPathExpression<Element> styleName = readFile.compile("//route/leg/step/start_location", Filters.element());
+        XPathExpression<Element> startLocs = readFile.compile("//route/leg/step/start_location", Filters.element());
+        XPathExpression<Element> endLocs = readFile.compile("//route/leg/step/end_location", Filters.element());
 
-        for (int i = 0; i < styleName.evaluate(document).size(); i++) {
+        for (int i = 0; i < startLocs.evaluate(document).size(); i++) {
 
-            Element element = styleName.evaluate(document).get(i);
-            String lat = element.getChild("lat").getValue();
-            String lng = element.getChild("lng").getValue();
+            Element eStart = startLocs.evaluate(document).get(i);
+            Element eEnd = endLocs.evaluate(document).get(i);
+            String sLat = eStart.getChild("lat").getValue();
+            String sLng = eStart.getChild("lng").getValue();
+            String eLat = eEnd.getChild("lat").getValue();
+            String eLng = eEnd.getChild("lng").getValue();
 
             try {
-                latLngs.add(new LatLng(Double.parseDouble(lat), Double.parseDouble(lng)));
+                latLngs.add(new LatLng(Double.parseDouble(sLat), Double.parseDouble(sLng)));
+                latLngs.add(new LatLng(Double.parseDouble(eLat), Double.parseDouble(eLng)));
             } catch (NumberFormatException nfe) {
                 nfe.printStackTrace();
             }

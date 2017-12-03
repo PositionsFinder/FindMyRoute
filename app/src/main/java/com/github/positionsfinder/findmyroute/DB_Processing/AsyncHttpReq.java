@@ -6,8 +6,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.github.positionsfinder.findmyroute.R;
-import com.github.positionsfinder.findmyroute.XmlParser.ParseXML;
-import com.google.android.gms.maps.model.LatLng;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -23,7 +21,6 @@ import org.json.JSONTokener;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -36,7 +33,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
+public abstract class AsyncHttpReq extends AsyncTask<String, Void, Object> {
 
     /**
      * The String containing the BaseURL from which the DB-Server can be accessed
@@ -46,9 +43,10 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
     /**
      * Keeps a reference to the calling Activity to access (1) their Resources and (2) talk back
+     *
      * @param cntx The application's context to be able to access the Resources
      */
-    public AsyncHttpReq(Context cntx){
+    public AsyncHttpReq(Context cntx) {
 
         Resources res = cntx.getResources();
         this.cntx = cntx;
@@ -57,35 +55,48 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
     /**
      * This method will generate the URL with the needed parameters to get results from the DB.
+     *
      * @param methodToCall The R.string.xxxx of the method we want to use
-     * @param values A HashMap containing all parameters needed for the provided methodToCall
+     * @param values       A HashMap containing all parameters needed for the provided methodToCall
      * @return The status of the called Operation (boolean). In case of getFriendsLatestPosition the
      * response will be a HashMap<String, Object> containing the username, lat and lon.
      */
-    public Object callHttpMethod(int methodToCall, HashMap<String, Object> values){
+    public Object callHttpMethod(int methodToCall, HashMap<String, Object> values) {
 
         // Access the Resources to get the >action< String (res.getString(xxxx))
         Resources res = cntx.getResources();
         String params = "";
 
-        switch(methodToCall){
+        switch (methodToCall) {
+
             case R.string.http_method_ActivateUser:
 
                 baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
 
-                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
+                for (Map.Entry entry : values.entrySet()) { // +"&user="+userName+"&password="+password+"&invCode="+invCode;
                     params += "&" + entry.getKey() + "=" + entry.getValue();
                 }
                 //DBG: System.out.println(params);
                 break;
+            //--------------------http_method_checkCodeIfValid---------------------------------
+            case R.string.http_method_checkCodeIfValid:
 
+                baseUrl += "user.php";
+                params = "?action=" + res.getString(methodToCall);
+
+                for (Map.Entry entry : values.entrySet()) {
+                    params += "&" + entry.getKey() + "=" + entry.getValue();
+                }
+                //DBG: System.out.println(params);
+                break;
+            //-----------------------------------------------------
             case R.string.http_method_LoginUser:
 
                 baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
 
-                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
+                for (Map.Entry entry : values.entrySet()) { // +"&user="+userName+"&password="+password+"&invCode="+invCode;
                     params += "&" + entry.getKey() + "=" + entry.getValue();
                 }
                 //DBG: System.out.println(params);
@@ -96,7 +107,18 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 baseUrl += "user.php";
                 params = "?action=" + res.getString(methodToCall);
 
-                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&password="+password+"&invCode="+invCode;
+                for (Map.Entry entry : values.entrySet()) { // +"&user="+userName+"&password="+password+"&invCode="+invCode;
+                    params += "&" + entry.getKey() + "=" + entry.getValue();
+                }
+                //DBG: System.out.println(params);
+                break;
+
+            case R.string.http_method_setUserOffline:
+
+                baseUrl += "user.php";
+                params = "?action=" + res.getString(methodToCall);
+
+                for (Map.Entry entry : values.entrySet()) { // +"&user="+userName
                     params += "&" + entry.getKey() + "=" + entry.getValue();
                 }
                 //DBG: System.out.println(params);
@@ -107,7 +129,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 baseUrl += "pos.php";
                 params = "?action=" + res.getString(methodToCall);
 
-                for(Map.Entry entry: values.entrySet()){ // +"&user="+userName+"&lat="+lat+"&lon="+lon
+                for (Map.Entry entry : values.entrySet()) { // +"&user="+userName+"&lat="+lat+"&lon="+lon
                     params += "&" + entry.getKey() + "=" + entry.getValue();
                 }
                 //DBG: System.out.println(params);
@@ -118,7 +140,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 baseUrl += "pos.php";
                 params = "?action=" + res.getString(methodToCall);
 
-                for(Map.Entry entry: values.entrySet()){ // +"&friend="+friendsname
+                for (Map.Entry entry : values.entrySet()) { // +"&friend="+friendsname
                     params += "&" + entry.getKey() + "=" + entry.getValue();
                 }
                 //DBG: System.out.println(params);
@@ -131,6 +153,13 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                 //DBG: System.out.println(params);
                 break;
 
+            case R.string.http_method_dbConnectionTest:
+
+                baseUrl += "user.php";
+                params = "?action=" + res.getString(methodToCall);
+                //DBG: System.out.println(params);
+                break;
+
             default:
                 // return generateSimpleErrorResponse(); unfortunately we cannot return stuff here
                 break;
@@ -138,12 +167,14 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
         // Concat the baseURL with our params to get the full URL
         String finalUrl = baseUrl + params;
+        System.out.println(finalUrl);
         // DBG: System.out.println(finalUrl);
 
         // Execute the doInBackground method and save the retruned Object into our status Object
         Object status = null;
         try {
             status = this.execute(finalUrl, res.getString(methodToCall)).get(3000, TimeUnit.MILLISECONDS);
+            System.out.println("StatusObject" + status);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -157,6 +188,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
     /**
      * This method will be running in the background (non-UI-Thread) and will call onPostExecute()
      * when finished.
+     *
      * @param strings The URL we want to call
      * @return An ArrayList<HashMap<String, Object>> containing the HTTP response
      */
@@ -193,7 +225,11 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
             String strNonProcessed = buildString(response);
             ArrayList<HashMap<String, Object>> responseList;
 
-            switch(methodCalled){
+            switch (methodCalled) {
+                case "checkCodeIfValid":
+                    responseList = processResponse(strNonProcessed);
+                    status = Helper_User.interpretStatus(responseList);
+                    break;
                 case "activateUser":
                     responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
@@ -206,16 +242,24 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
                     responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
                     break;
+                case "setOffline":
+                    responseList = processResponse(strNonProcessed);
+                    status = Helper_User.interpretStatus(responseList);
+                    break;
                 case "insertPosition":
                     responseList = processResponse(strNonProcessed);
                     status = Helper_User.interpretStatus(responseList);
                     break;
                 case "getFriendsLatestPosition":
                     responseList = processResponse(strNonProcessed);
-                    if(responseList != null && responseList.get(0) != null){
+                    if (responseList != null && responseList.get(0) != null) {
                         friendsPositionMap = responseList.get(0);
                         return friendsPositionMap;
                     }
+                    break;
+                case "connTest":
+                    responseList = processResponse(strNonProcessed);
+                    status = Helper_User.interpretStatus(responseList);
                     break;
                 default:
                     break;
@@ -223,7 +267,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
         } catch (IOException | URISyntaxException e) {
             // IF IOException occurs => Indicator for a timeout
-            if(strings[1].equals("getFriendsLatestPosition")) {
+            if (strings[1].equals("getFriendsLatestPosition")) {
                 return generateSimpleErrorResponse();
             } else {
                 return false;
@@ -234,9 +278,10 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
     /**
      * Builds a single String from the provided HTTP response.
+     *
      * @return The raw JSON String
      */
-    private String buildString(HttpResponse response){
+    private String buildString(HttpResponse response) {
 
         try {
             BufferedReader inReader = new BufferedReader(new
@@ -252,7 +297,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
 
             return buffer.toString();
 
-        } catch (IOException e){
+        } catch (IOException e) {
             return "ERROR";
         }
     }
@@ -261,44 +306,47 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
      * This method processes the provided response String. It will detect if it contains a JSONArray
      * or a single JSONObject and returns the JSON structure in form of an ArrayList-HashMap
      * construct.
+     *
      * @param response
      * @return
      */
-    private ArrayList<HashMap<String, Object>> processResponse(String response){
+    private ArrayList<HashMap<String, Object>> processResponse(String response) {
 
         ArrayList<HashMap<String, Object>> respList = new ArrayList<HashMap<String, Object>>();
 
-        if(!response.equals("ERROR") && !response.equals("[]")){
+        if (!response.equals("ERROR") && !response.equals("[]")) {
 
             // As default we expect a simple object
             Object jsonTypeIndicator = new JSONObject();
 
             try {
                 jsonTypeIndicator = new JSONTokener(response).nextValue(); // JSONArray or JSONObject
-            } catch (JSONException e) { e.printStackTrace(); }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
             try {
                 // try to parse our result
-                if(jsonTypeIndicator instanceof JSONArray) { // Case JSONArray:
+                if (jsonTypeIndicator instanceof JSONArray) { // Case JSONArray:
                     JSONArray jObj = null;
 
                     jObj = new JSONArray(response);// [{"USERNAME":"admin","PASSWORD":"admin_password"},{"USERNAME":"mosaab","PASSWORD":"mosaabs_password"}...
 
-                    for(int i = 0; i < jObj.length(); i++){
+                    for (int i = 0; i < jObj.length(); i++) {
 
                         JSONObject object = jObj.getJSONObject(i); // {"USERNAME":"admin","PASSWORD":"admin_password"}
                         HashMap<String, Object> curMap = new HashMap<>();
                         Iterator<String> iter = object.keys(); // eg. iter = USERNAME,PASSWORD
 
-                        while(iter.hasNext()) {
+                        while (iter.hasNext()) {
                             String key = iter.next(); // eg. key = "USERNAME"
-                            curMap.put(key,object.get(key)); // eg. value("USERNAME") = "admin"
+                            curMap.put(key, object.get(key)); // eg. value("USERNAME") = "admin"
                         }
                         respList.add(curMap);
                     }
                 } else if (jsonTypeIndicator instanceof JSONObject) { // Case JSONObject:
 
-                    Log.e("*** ERR:"," The JSON returned does not contain an array. \n" +
+                    Log.e("*** ERR:", " The JSON returned does not contain an array. \n" +
                             "We currently have no method to handle this situation..");
 
                 }
@@ -313,26 +361,28 @@ public abstract class AsyncHttpReq extends AsyncTask<String,Void,Object> {
         return respList;
     }
 
-    private ArrayList<HashMap<String, Object>> generateSimpleErrorResponse(){
+    private ArrayList<HashMap<String, Object>> generateSimpleErrorResponse() {
 
         ArrayList<HashMap<String, Object>> errorList = new ArrayList<>();
-        HashMap<String,Object> errorMap = new HashMap<>();
-        errorMap.put("STATUS","ERROR");
+        HashMap<String, Object> errorMap = new HashMap<>();
+        errorMap.put("STATUS", "ERROR");
         errorList.add(errorMap);
         return errorList;
     }
 
     /**
      * This method will be called when doInBackground finished
+     *
      * @param result
      */
-    protected void onPostExecute(Object result){
+    protected void onPostExecute(Object result) {
         // TODO: onPostPostExecute(Object);
     }
 
     /**
      * This abstract method can be used to get the response of the async process as callback.
      * Just a comfort implementation because callHttpMethod will return the result first
+     *
      * @param result
      */
     protected abstract void onPostPostExecute(Object result);

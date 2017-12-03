@@ -200,14 +200,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
                 break;
             case R.id.attractions:
-                dialogWindow();
+                dialogAttractionWindow();
                 Toast.makeText(this, "Tourist Attractions", Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
     }
 
-    private void dialogWindow() {
+    private void dialogAttractionWindow() {
         try {
             AlertDialog.Builder builderSingle = new AlertDialog.Builder(MapsActivity.this);
             builderSingle.setTitle("Select an Attraction");
