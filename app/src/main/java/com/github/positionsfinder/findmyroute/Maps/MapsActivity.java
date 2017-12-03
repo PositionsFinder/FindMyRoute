@@ -31,6 +31,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.github.positionsfinder.findmyroute.DB_Processing.Helper_Position;
+import com.github.positionsfinder.findmyroute.DB_Processing.Helper_User;
 import com.github.positionsfinder.findmyroute.R;
 import com.github.positionsfinder.findmyroute.XmlParser.ParseXmlFile;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -45,6 +46,7 @@ import org.jdom2.JDOMException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
@@ -82,22 +84,24 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View view) {
                 //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
-                final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Your Position is: " + myPos, Snackbar.LENGTH_INDEFINITE);
-                snackBar.setAction("Dismiss", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        snackBar.dismiss();
-                    }
-                });
-                snackBar.show();
-
-                try {
-                    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                    r.play();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Your Position is: " + myPos, Snackbar.LENGTH_INDEFINITE);
+//                snackBar.setAction("Dismiss", new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        snackBar.dismiss();
+//                    }
+//                });
+//                snackBar.show();
+//
+//                try {
+//                    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//                    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+//                    r.play();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+                //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
+                showConnectToFriendDialogWindow();
             }
         });
 
@@ -273,7 +277,48 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     //ToDo: @Paolo ähnlich wie dialogWindow() für die verbindung zwischen die 2 Nutzer...
-    private void userDialogWindow() {
+    private void showConnectToFriendDialogWindow(){
+
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(MapsActivity.this);
+        builderSingle.setTitle("Select the user you want to meet");
+
+        ArrayList<String> userNames = Helper_User.getOnlineUsers(getApplicationContext());
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MapsActivity.this, android.R.layout.select_dialog_singlechoice, userNames);
+
+        builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayAdapter.getItem(which);
+                AlertDialog.Builder builderInner = new AlertDialog.Builder(MapsActivity.this);
+
+                HashMap<String, Object> friendsPosMap = Helper_Position.getFriendsLatestPosition(getApplicationContext(), strName);
+                double lat = 0;
+                double lon = 0;
+
+                try {
+                    lat = Double.parseDouble(friendsPosMap.get("LAT").toString());
+                    lon = Double.parseDouble(friendsPosMap.get("LON").toString());
+                } catch (NumberFormatException | NullPointerException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+                Helper_Position.drawDirectionsLatLng(mMap, myPos, new LatLng(lat, lon));
+                Toast.makeText(getApplicationContext(), "Friends latest Pos: " + lat + ", " + lon, Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+
+            }
+        });
+
+        builderSingle.show();
 
     }
 

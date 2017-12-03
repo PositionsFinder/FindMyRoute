@@ -12,5 +12,6 @@
     <string name="http_method_setUserOffline">setOffline</string>
     <string name="http_method_dbConnectionTest">connTest</string>
     <string name="http_method_checkCodeIfValid">checkCodeIfValid</string>
+    <string name="http_method_getOnlineUsers">getOnlineUsers</string>
     <!-- //HTTP_methods -->
 </resources>
