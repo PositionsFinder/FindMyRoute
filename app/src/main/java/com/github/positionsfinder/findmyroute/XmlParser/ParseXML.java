@@ -162,7 +162,8 @@ public class ParseXML extends AsyncTask<String, Void, ArrayList<LatLng>> {
     protected void onPostExecute(ArrayList<LatLng> result) {
 
         PolylineOptions polylineOptions = new PolylineOptions();
-        polylineOptions.width(30);
+        polylineOptions.width(25);
+        polylineOptions.isClickable();
         polylineOptions.add(result.toArray(new LatLng[result.size()]));
 
         System.out.println(polylineOptions.getEndCap());
