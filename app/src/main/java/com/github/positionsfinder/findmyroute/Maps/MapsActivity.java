@@ -39,6 +39,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.jdom2.JDOMException;
@@ -57,7 +58,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private boolean hidePartner = false;
     private LatLng myPos;
     private FloatingActionButton fabutton;
-
+    private Marker currentMarker = null;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,13 +161,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onLocationChanged(Location location) {
+
+        if(!(currentMarker==null)){
+            currentMarker.remove();
+        }
         pBar.setVisibility(View.GONE);
 
         //info.setText(" Long: " + location.getLongitude() + " Lat: " + location.getLatitude());
-
-        mMap.clear();
+        //Marker markerName = map.addMarker(new MarkerOptions().position(latLng).title("Title"));
+        // mMap.clear();
         myPos = new LatLng(location.getLatitude(), location.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
+        MarkerOptions myMarker = new MarkerOptions().position(myPos).title("My Current Place!");
+        currentMarker = mMap.addMarker(myMarker);
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setRotateGesturesEnabled(true);
         mMap.getUiSettings().setScrollGesturesEnabled(true);
