@@ -185,8 +185,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onDestroy() {
-        super.onDestroy();
         Helper_User.setUserOffline(getApplicationContext(), user.getText().toString());
-
+        super.onDestroy();
     }
 }

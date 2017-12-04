@@ -14,6 +14,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,7 @@ import android.widget.Toast;
 import com.github.positionsfinder.findmyroute.DB_Processing.Helper_Position;
 import com.github.positionsfinder.findmyroute.DB_Processing.Helper_User;
 import com.github.positionsfinder.findmyroute.R;
+import com.github.positionsfinder.findmyroute.Splash.Splash;
 import com.github.positionsfinder.findmyroute.XmlParser.ParseXmlFile;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -53,6 +55,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LatLng myPos;
     private FloatingActionButton fabutton;
     private Marker currentMarker = null;
+    private String userName;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +71,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // get username for greeting message
         if (getIntent().hasExtra("user")) {
-            String msg = getIntent().getExtras().getString("user").toString();
-            Toast.makeText(this, "Hallo, " + msg + ". Wait until the Location is Loaded!", Toast.LENGTH_LONG).show();
+            userName = getIntent().getExtras().getString("user").toString();
+            Toast.makeText(this, "Hallo, " + userName + ". Wait until the Location is Loaded!", Toast.LENGTH_LONG).show();
         }
         // if user offline!
         if (getIntent().hasExtra("offline")) {
@@ -96,7 +100,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                    e.printStackTrace();
 //                }
                 //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
-                showConnectToFriendDialogWindow();
+                if (Splash.vpn) {
+                    showConnectToFriendDialogWindow();
+                }else{
+                    Snackbar.make(findViewById(android.R.id.content), "VPN NEEDED!" + myPos, Snackbar.LENGTH_LONG).show();
+                }
+
             }
         });
 
@@ -156,13 +165,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onLocationChanged(Location location) {
 
-        if(!(currentMarker==null)){
+        if (!(currentMarker == null)) {
             currentMarker.remove();
         }
         pBar.setVisibility(View.GONE);
 
         //info.setText(" Long: " + location.getLongitude() + " Lat: " + location.getLatitude());
-        //Marker markerName = map.addMarker(new MarkerOptions().position(latLng).title("Title"));
         // mMap.clear();
         myPos = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions myMarker = new MarkerOptions().position(myPos).title("My Current Place!");
@@ -277,7 +285,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     //ToDo: @Paolo ähnlich wie dialogWindow() für die verbindung zwischen die 2 Nutzer...
-    private void showConnectToFriendDialogWindow(){
+    private void showConnectToFriendDialogWindow() {
 
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(MapsActivity.this);
         builderSingle.setTitle("Select the user you want to meet");
@@ -324,7 +332,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onRestart() {
+        Helper_User.setUserOffline(getApplicationContext(), userName);
+
         super.onRestart();
     }
 
+    protected void onDestroy() {
+        Helper_User.setUserOffline(getApplicationContext(), userName);
+        super.onDestroy();
+    }
 }

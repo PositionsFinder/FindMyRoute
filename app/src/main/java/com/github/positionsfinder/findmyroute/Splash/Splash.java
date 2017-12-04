@@ -19,6 +19,8 @@ public class Splash extends AppCompatActivity {
 
 
     private static int SPLASH_TIME_OUT = 1500; // Splash time 1.5 Sec.
+    public static boolean vpn;
+
 
     // Handler and Runnable for setting the time.
     private Handler handler;
@@ -39,6 +41,7 @@ public class Splash extends AppCompatActivity {
 
         //boolean success = Helper_User.loginUser(getApplicationContext(), "admin", "admin");
         boolean success = Helper_User.testDBConnection(getApplicationContext());
+        vpn = success;
 
         /* On start, Check Internet Connection,
          * if false send a Message to MainActivity to Check Internet Connection.
