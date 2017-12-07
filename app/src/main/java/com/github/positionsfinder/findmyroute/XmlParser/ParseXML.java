@@ -124,9 +124,7 @@ public class ParseXML extends AsyncTask<String, Void, ArrayList<LatLng>> {
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
-        for (LatLng i : posList) {
-            System.out.println(i);
-        }
+
         return posList;
     }
 
@@ -166,8 +164,6 @@ public class ParseXML extends AsyncTask<String, Void, ArrayList<LatLng>> {
         polylineOptions.width(25);
         polylineOptions.isClickable();
         polylineOptions.add(result.toArray(new LatLng[result.size()]));
-
-        System.out.println(polylineOptions.getEndCap());
 
         if (result != null && !result.isEmpty()) {
             LatLng item = result.get(result.size() - 1);

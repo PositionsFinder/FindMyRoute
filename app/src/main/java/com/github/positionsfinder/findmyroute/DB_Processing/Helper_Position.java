@@ -115,7 +115,6 @@ public class Helper_Position {
             String url = "https://maps.googleapis.com/maps/api/directions/xml?mode=walking&" + params;// +"&key=AIzaSyBJdqWTAf4e5Ty2590JjFF39gg-ey4YVoE";
             // Build the Map needed to call our asyncMethod
 
-            System.out.println("***URL:"+url);
             ParseXML xmlParser = new ParseXML(map);
             xmlParser.execute(url);
         }
