@@ -10,13 +10,19 @@ You need an invite code to sign into the Application, as well as an offline use 
 Beta-Version 2.0 is ready to use :).
 
 <p align="center">
-  <img src="http://image.ibb.co/eQSsNm/Screenshot_20171115_173949.png" width="350"/>
-  <img src="http://image.ibb.co/idae2m/Screenshot_20171115_173952.png" width="350"/>
-  <img src="http://image.ibb.co/csuva6/Screenshot_20171115_173955.png" width="350"/>
-  <img src="http://preview.ibb.co/fzdcoR/Screenshot_20171115_174001.png" width="350"/>
-  <img src="http://image.ibb.co/faZp2m/Screenshot_20171115_174004.png" width="350"/>
-  <img src="http://image.ibb.co/cYthNm/Screenshot_20171115_174017.png" width="350"/>
-  <img src="http://image.ibb.co/cfdGhm/Screenshot_20171115_174036.png" width="350"/>
+  <img src="http://image.ibb.co/fMjAKb/Screenshot_20171207_125227.png" width="350"/>
+  <img src="http://image.ibb.co/ci9czb/Screenshot_20171207_125230.png" width="350"/>
+  <img src="http://image.ibb.co/cXkHzb/Screenshot_20171207_125237.png" width="350"/>
+  <img src="http://image.ibb.co/mHJgQG/Screenshot_20171207_125240.png" width="350"/>
+  <img src="http://image.ibb.co/j7uczb/Screenshot_20171207_125247.png" width="350"/>
+  <img src="http://image.ibb.co/g2Uo5G/Screenshot_20171207_125255.png" width="350"/>
+  <img src="http://image.ibb.co/hLQjeb/Screenshot_20171207_125306.png" width="350"/>
+  <img src="http://image.ibb.co/j9CVKb/Screenshot_20171207_125353.png" width="350"/>
+  <img src="http://image.ibb.co/e93FkG/Screenshot_20171207_125400.png" width="350"/>
+  <img src="http://image.ibb.co/jgRqKb/Screenshot_20171207_125404.png" width="350"/>
+  <img src="http://image.ibb.co/dtfvkG/Screenshot_20171207_125421.png" width="350"/>
+  <img src="http://image.ibb.co/g9jo5G/Screenshot_20171207_125429.png" width="350"/>
+  <img src="http://image.ibb.co/ia9zCw/Screenshot_20171207_125451.png" width="350"/>
 </p>
 
 --->1:
