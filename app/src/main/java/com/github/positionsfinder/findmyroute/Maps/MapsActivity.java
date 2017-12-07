@@ -40,6 +40,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.jdom2.JDOMException;
 
@@ -60,6 +61,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private FloatingActionButton fabuttonCurrentLocation;
     private Marker currentMarker = null;
     private String userName;
+    private String partnerName = null;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -87,11 +89,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         fabuttonFriendRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Splash.vpn) {
-                    showConnectToFriendDialogWindow();
+
+                if (!hidePartner) {
+                    if (Splash.vpn) {
+                        showConnectToFriendDialogWindow();
+                    }
                 } else {
                     Toast.makeText(MapsActivity.this, "Please Login first...", Toast.LENGTH_SHORT).show();
                 }
+
 
             }
         });
@@ -178,9 +184,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onLocationChanged(Location location) {
 
-        if (!(currentMarker == null)) {
-            currentMarker.remove();
-        }
+        mMap.clear();
         pBar.setVisibility(View.GONE);
 
         //info.setText(" Long: " + location.getLongitude() + " Lat: " + location.getLatitude());
@@ -193,7 +197,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.getUiSettings().setScrollGesturesEnabled(true);
         mMap.getUiSettings().setTiltGesturesEnabled(false);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(myPos));
-
+        if ((partnerName != null)) {
+            calculateRoute(partnerName);
+            myMarker = new MarkerOptions().position(myPos).title("My Current Place!");
+            currentMarker = mMap.addMarker(myMarker);
+        }
     }
 
     @Override
@@ -297,7 +305,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-    //ToDo: @Paolo ähnlich wie dialogWindow() für die verbindung zwischen die 2 Nutzer...
     private void showConnectToFriendDialogWindow() {
 
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(MapsActivity.this);
@@ -317,10 +324,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String strName = arrayAdapter.getItem(which);
+                partnerName = arrayAdapter.getItem(which);
                 AlertDialog.Builder builderInner = new AlertDialog.Builder(MapsActivity.this);
 
-                HashMap<String, Object> friendsPosMap = Helper_Position.getFriendsLatestPosition(getApplicationContext(), strName);
+/*                HashMap<String, Object> friendsPosMap = Helper_Position.getFriendsLatestPosition(getApplicationContext(), partnerName);
                 double lat = 0;
                 double lon = 0;
 
@@ -333,7 +340,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
 
                 Helper_Position.drawDirectionsLatLng(mMap, myPos, new LatLng(lat, lon));
-                Toast.makeText(getApplicationContext(), "Friends latest Pos: " + lat + ", " + lon, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Friends latest Pos: " + lat + ", " + lon, Toast.LENGTH_SHORT).show();*/
+
+                calculateRoute(partnerName);
                 dialog.dismiss();
 
             }
@@ -343,11 +352,29 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-    @Override
-    public void onRestart() {
-        Helper_User.setUserOffline(getApplicationContext(), userName);
+    private void calculateRoute(String strName) {
 
-        super.onRestart();
+
+        HashMap<String, Object> friendsPosMap = Helper_Position.getFriendsLatestPosition(getApplicationContext(), strName);
+        double lat = 0;
+        double lon = 0;
+
+        try {
+            lat = Double.parseDouble(friendsPosMap.get("LAT").toString());
+            lon = Double.parseDouble(friendsPosMap.get("LON").toString());
+        } catch (NumberFormatException | NullPointerException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        Helper_Position.drawDirectionsLatLng(mMap, myPos, new LatLng(lat, lon));
+        Toast.makeText(getApplicationContext(), "Friends latest Pos: " + lat + ", " + lon, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResume() {
+        Helper_User.setUserOffline(getApplicationContext(), userName);
+        super.onResume();
     }
 
     protected void onDestroy() {

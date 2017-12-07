@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Check Username und Password in DB.
-        // ToDo: auf neue DB_Processing umsteigen.
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

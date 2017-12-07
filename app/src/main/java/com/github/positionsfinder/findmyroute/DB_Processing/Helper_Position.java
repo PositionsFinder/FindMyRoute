@@ -44,7 +44,7 @@ public class Helper_Position {
      * This method will fetch the friend's latest position
      * @param cntx The application's context to get the resources from
      * @param friendsName The friend's name to catch the position from
-     * @return TODO: Return only LatLng, or a HashMap with LatLng + Timestamp (+ maybe other infos)??
+     * @return HashMap containing Lat,Lng and Timestamp Keys
      */
     public static HashMap<String, Object> getFriendsLatestPosition(Context cntx, String friendsName){
 
@@ -60,7 +60,6 @@ public class Helper_Position {
         friendMap.put("friendsName",friendsName);
 
         positionMap = (HashMap<String, Object>) asyncHttpReq.callHttpMethod(R.string.http_method_getFriendsLatestPosition, friendMap);
-        // TODO: Either process the map right here, or let it get processed by the calling Activity?!
         return positionMap;
     }
 

@@ -160,6 +160,7 @@ public class ParseXML extends AsyncTask<String, Void, ArrayList<LatLng>> {
 
     @Override
     protected void onPostExecute(ArrayList<LatLng> result) {
+        //map.clear();
 
         PolylineOptions polylineOptions = new PolylineOptions();
         polylineOptions.width(25);
