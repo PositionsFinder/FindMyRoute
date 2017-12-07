@@ -25,6 +25,7 @@ Beta-Version 2.0 is ready to use :).
   <img src="http://image.ibb.co/ia9zCw/Screenshot_20171207_125451.png" width="350"/>
 </p>
 
+Get All Commits as Log file (txt):
 --->1:
 		Start in ~\PortableGit\bin the Sh.exe Application 
 		it will open in CMD, possible output:
@@ -46,7 +47,7 @@ Beta-Version 2.0 is ready to use :).
 		go to the Repository folder with -> cd FindMyRoute
 
 --->5:
-		git log -F    / git log / git log -p
-		=Kurze Commits           = Detailliertes Commits 
+		git log -F(=Kurze Commits)    / git log / git log -p(= Detailliertes Commits)
+		            
 
 (c) Asli, Mosaab - Haider, Paolo
