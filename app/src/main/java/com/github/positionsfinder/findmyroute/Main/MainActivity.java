@@ -14,13 +14,18 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 boolean success = Helper_User.loginUser(getApplicationContext(), user.getText().toString(), pass.getText().toString());
 
                 if (success) {
@@ -117,14 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 // getInviteCode(txtUrl.getText().toString());
                 boolean success = Helper_User.checkCodeIfValid(getApplicationContext(), txtUrl.getText().toString());
                 if (success) {
-                    final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Invite Code Valid! Username:test1 Password:test1", Snackbar.LENGTH_INDEFINITE);
-                    snackBar.setAction("Dismiss", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            snackBar.dismiss();
-                        }
-                    });
-                    snackBar.show();
+                    setUserPass(txtUrl.getText().toString());
                 } else {
                     Snackbar.make(findViewById(android.R.id.content), "Invite Code invalid!, Please try Again.", Snackbar.LENGTH_LONG).show();
                 }
@@ -187,5 +184,45 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         Helper_User.setUserOffline(getApplicationContext(), user.getText().toString());
         super.onDestroy();
+    }
+
+    private void setUserPass(String code) {
+
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+
+        final EditText userBox = new EditText(this);
+        userBox.setHint("Username");
+        layout.addView(userBox);
+
+        final EditText passBox = new EditText(this);
+        passBox.setHint("Password");
+        layout.addView(passBox);
+
+        new AlertDialog.Builder(this)
+                .setTitle("Sign up")
+                .setMessage("Please insert new Username and Password")
+                .setView(layout)
+                .setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String newUsername = userBox.getText().toString();
+                        String newPassword = passBox.getText().toString();
+                        boolean success = Helper_User.activateUser(getApplicationContext(), newUsername, newPassword, code);
+
+                        final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Invite Code Valid! Username:" + newUsername + " Password:" + newPassword, Snackbar.LENGTH_INDEFINITE);
+                        snackBar.setAction("Dismiss", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                snackBar.dismiss();
+                            }
+                        });
+                        snackBar.show();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                })
+                .show();
     }
 }

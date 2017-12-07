@@ -8,6 +8,9 @@ import android.content.res.AssetManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -53,7 +56,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ProgressBar pBar;
     private boolean hidePartner = false;
     private LatLng myPos;
-    private FloatingActionButton fabutton;
+    private FloatingActionButton fabuttonFriendRoute;
+    private FloatingActionButton fabuttonCurrentLocation;
     private Marker currentMarker = null;
     private String userName;
 
@@ -67,7 +71,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //info = (TextView) findViewById(R.id.info);
         pBar = (ProgressBar) findViewById(R.id.progressBar);
-        fabutton = (FloatingActionButton) findViewById(R.id.fAButton);
+        fabuttonFriendRoute = (FloatingActionButton) findViewById(R.id.fAButton);
+        fabuttonCurrentLocation = (FloatingActionButton) findViewById(R.id.fAButtonCurrentLocation);
 
         // get username for greeting message
         if (getIntent().hasExtra("user")) {
@@ -79,35 +84,43 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             hidePartner = true;
         }
 
-        fabutton.setOnClickListener(new View.OnClickListener() {
+        fabuttonFriendRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
-//                final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Your Position is: " + myPos, Snackbar.LENGTH_INDEFINITE);
-//                snackBar.setAction("Dismiss", new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        snackBar.dismiss();
-//                    }
-//                });
-//                snackBar.show();
-//
-//                try {
-//                    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-//                    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-//                    r.play();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-                //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
                 if (Splash.vpn) {
                     showConnectToFriendDialogWindow();
-                }else{
-                    Snackbar.make(findViewById(android.R.id.content), "VPN NEEDED!" + myPos, Snackbar.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MapsActivity.this, "Please Login first...", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+
+        fabuttonCurrentLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
+                final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Your Position is: " + myPos, Snackbar.LENGTH_INDEFINITE);
+                snackBar.setAction("Dismiss", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        snackBar.dismiss();
+                    }
+                });
+                snackBar.show();
+
+                try {
+                    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                    r.play();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -221,7 +234,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (hidePartner) {
                     Toast.makeText(this, "Please Login first...", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "Connect to Partner", Toast.LENGTH_SHORT).show();
+                    showConnectToFriendDialogWindow();
                 }
                 break;
             case R.id.statistic:

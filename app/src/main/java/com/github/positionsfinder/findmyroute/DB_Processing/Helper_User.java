@@ -108,7 +108,7 @@ public class Helper_User {
                     // We use the return of callHttpMethod. This callback is not used here.
                 }
             };
-            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_LoginUser,userMap);
+            status = (boolean) asyncHttpReq.callHttpMethod(R.string.http_method_ActivateUser,userMap);
         }
 
         return status;
