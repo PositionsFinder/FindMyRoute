@@ -40,7 +40,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.jdom2.JDOMException;
 
@@ -86,19 +85,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             hidePartner = true;
         }
 
+        //ToDo: Check if useronline
         fabuttonFriendRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (!hidePartner) {
+                System.out.println(hidePartner + " " + Splash.vpn);
+                if (hidePartner) {
+                    Toast.makeText(MapsActivity.this, "Please Login first...", Toast.LENGTH_SHORT).show();
+                } else {
                     if (Splash.vpn) {
                         showConnectToFriendDialogWindow();
                     }
-                } else {
-                    Toast.makeText(MapsActivity.this, "Please Login first...", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
 
@@ -106,6 +105,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View view) {
                 //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPos, (mMap.getMaxZoomLevel() - 3)));
                 final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Your Position is: " + myPos, Snackbar.LENGTH_INDEFINITE);
                 snackBar.setAction("Dismiss", new View.OnClickListener() {
                     @Override
@@ -114,7 +114,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     }
                 });
                 snackBar.show();
-
                 try {
                     Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
                     Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
@@ -122,8 +121,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -133,10 +130,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
         //GPS
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        locationManager = (LocationManager)
+
+                getSystemService(LOCATION_SERVICE);
 
 
         allowGPS();
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -175,8 +175,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        //default markerr Munich.
         LatLng myPos = new LatLng(48.135, 11.58);
-        mMap.addMarker(new MarkerOptions().position(myPos).title("Munich!"));
+        //mMap.addMarker(new MarkerOptions().position(myPos).title("Munich!"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPos, (mMap.getMaxZoomLevel() - 3)));
 
     }
@@ -184,11 +185,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onLocationChanged(Location location) {
 
-        mMap.clear();
+        if (currentMarker != null) {
+            currentMarker.remove();
+        }
         pBar.setVisibility(View.GONE);
 
-        //info.setText(" Long: " + location.getLongitude() + " Lat: " + location.getLatitude());
-        // mMap.clear();
+        // mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
         myPos = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions myMarker = new MarkerOptions().position(myPos).title("My Current Place!");
         currentMarker = mMap.addMarker(myMarker);
@@ -197,6 +199,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.getUiSettings().setScrollGesturesEnabled(true);
         mMap.getUiSettings().setTiltGesturesEnabled(false);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(myPos));
+
         if ((partnerName != null)) {
             calculateRoute(partnerName);
             myMarker = new MarkerOptions().position(myPos).title("My Current Place!");
@@ -245,13 +248,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     showConnectToFriendDialogWindow();
                 }
                 break;
-            case R.id.statistic:
-                if (hidePartner) {
-                    Toast.makeText(this, "Please Login first...", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "Statistic", Toast.LENGTH_SHORT).show();
-                }
-                break;
             case R.id.attractions:
                 dialogAttractionWindow();
                 Toast.makeText(this, "Tourist Attractions", Toast.LENGTH_SHORT).show();
@@ -290,6 +286,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     builderInner.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            mMap.clear();
+                            mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
                             Helper_Position.drawDirectionsLatLng(mMap, myPos, (parsedFile.getLatLng(strName)));
                             dialog.dismiss();
                         }
@@ -366,18 +364,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
-
+        mMap.clear();
+        mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
         Helper_Position.drawDirectionsLatLng(mMap, myPos, new LatLng(lat, lon));
         Toast.makeText(getApplicationContext(), "Friends latest Pos: " + lat + ", " + lon, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onResume() {
-        Helper_User.setUserOffline(getApplicationContext(), userName);
+        System.out.println("hello.... im in onResume");
+        Helper_User.setUserOnline(getApplicationContext(), userName);
         super.onResume();
     }
 
     protected void onDestroy() {
+        System.out.println("hallo.... im in onDestroy");
         Helper_User.setUserOffline(getApplicationContext(), userName);
         super.onDestroy();
     }

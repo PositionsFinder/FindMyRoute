@@ -4,25 +4,6 @@
             "outputFile": "C:\\Java\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-appinvite-11.6.2.aar\\2ba0e2401e2f3c9b1355f4c26a46fb9e\\res\\values-v21\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "172",
-                        "endLines": "5",
-                        "endColumns": "8",
-                        "endOffsets": "297"
-                    },
-                    "to": {
-                        "startLines": "299",
-                        "startColumns": "4",
-                        "startOffsets": "21921",
-                        "endLines": "300",
-                        "endColumns": "8",
-                        "endOffsets": "22046"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.0.0.aar\\940aea8a1ba5de72e4bde4295d61c321\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
@@ -96,6 +77,25 @@
                         "endLines": "166,228",
                         "endColumns": "12,96",
                         "endOffsets": "12783,17219"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-appinvite-11.6.0.aar\\e4b625e3e692233f6a3ae9554d8efb9a\\res\\values-v21\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "172",
+                        "endLines": "5",
+                        "endColumns": "8",
+                        "endOffsets": "297"
+                    },
+                    "to": {
+                        "startLines": "299",
+                        "startColumns": "4",
+                        "startOffsets": "21921",
+                        "endLines": "300",
+                        "endColumns": "8",
+                        "endOffsets": "22046"
                     }
                 }
             ]

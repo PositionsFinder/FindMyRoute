@@ -34,6 +34,8 @@ import com.github.positionsfinder.findmyroute.DB_Processing.Helper_User;
 import com.github.positionsfinder.findmyroute.Maps.MapsActivity;
 import com.github.positionsfinder.findmyroute.R;
 
+
+//ToDo: Route local btdal tnm7a -> login message if notlogged in bel Maps.
 public class MainActivity extends AppCompatActivity {
 
     private Button login;
@@ -80,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 boolean success = Helper_User.loginUser(getApplicationContext(), user.getText().toString(), pass.getText().toString());
 
                 if (success) {
-
                     progressLogin.setVisibility(View.VISIBLE);
                     txtMessage.setText("Logged in Please Wait.");
                     Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);

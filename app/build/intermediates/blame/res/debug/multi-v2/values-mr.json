@@ -4,7 +4,24 @@
             "outputFile": "C:\\Java\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.6.2.aar\\ef578e9162391e57d26902fc96912045\\res\\values-mr\\values.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.0.aar\\2c39508771aa0e4b9bf0536477302657\\res\\values-mr\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "285",
+                        "endColumns": "201",
+                        "endOffsets": "486"
+                    },
+                    "to": {
+                        "startLines": "66",
+                        "startColumns": "4",
+                        "startOffsets": "7002",
+                        "endColumns": "201",
+                        "endOffsets": "7199"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.6.0.aar\\7336cc45885c96cb7694a7aa5dd2c125\\res\\values-mr\\values.xml",
                     "from": {
                         "startLines": "4,5,6",
                         "startColumns": "0,0,0",
@@ -21,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.6.2.aar\\0ecd2379815fb0f2595767c228ccf8f3\\res\\values-mr\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "243",
-                        "endColumns": "99",
-                        "endOffsets": "342"
-                    },
-                    "to": {
-                        "startLines": "76",
-                        "startColumns": "4",
-                        "startOffsets": "8523",
-                        "endColumns": "103",
-                        "endOffsets": "8622"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.6.2.aar\\72b081eb8fd9109defdef0d9ba35e383\\res\\values-mr\\values.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.6.0.aar\\1eb19d2200eb838c6952fa511fdaf350\\res\\values-mr\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +55,58 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\9116488affb3e682399fcca762d2d6df\\res\\values-mr\\values.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.6.0.aar\\c79acdf38055c67364d94cbe09ff11b7\\res\\values-mr\\values.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "0,0",
+                        "startOffsets": "233,331",
+                        "endColumns": "97,88",
+                        "endOffsets": "330,419"
+                    },
+                    "to": {
+                        "startLines": "99,100",
+                        "startColumns": "4,4",
+                        "startOffsets": "10807,10909",
+                        "endColumns": "101,92",
+                        "endOffsets": "10904,10997"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-gcm-11.6.0.aar\\adffc70b08539f2ff726c8a7c2ca1ba4\\res\\values-mr\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "230",
+                        "endColumns": "96",
+                        "endOffsets": "326"
+                    },
+                    "to": {
+                        "startLines": "77",
+                        "startColumns": "4",
+                        "startOffsets": "8627",
+                        "endColumns": "100",
+                        "endOffsets": "8723"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.6.0.aar\\ebb3c257a272a0ab117912ff7bd7f478\\res\\values-mr\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "298,374,471,555,665,797,882,1054,1175,1281,1393,1496,1594,1670,1767,1864,1968,2044,2120,2193,2269,2366,2463,2554,2639,2724,2794,2888,2980,3077,3190,3343,3441,3533,3634",
+                        "endColumns": "75,96,83,109,131,84,171,120,105,111,102,97,75,96,96,103,75,75,72,75,96,96,90,84,84,69,93,91,96,112,152,97,91,100,75",
+                        "endOffsets": "373,470,554,664,796,881,1053,1174,1280,1392,1495,1593,1669,1766,1863,1967,2043,2119,2192,2268,2365,2462,2553,2638,2723,2793,2887,2979,3076,3189,3342,3440,3532,3633,3709"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2071,2151,2252,2340,2454,2586,2675,2851,2976,3086,3202,3309,3411,3491,3592,3693,3801,4266,4346,4423,4503,4604,4705,4800,4889,4978,5052,5150,5246,5347,5464,5617,5719,5815,5920",
+                        "endColumns": "79,100,87,113,131,88,175,124,109,115,106,101,79,100,100,107,79,79,76,79,100,100,94,88,88,73,97,95,100,116,152,101,95,104,79",
+                        "endOffsets": "2146,2247,2335,2449,2581,2670,2846,2971,3081,3197,3304,3406,3486,3587,3688,3796,3876,4341,4418,4498,4599,4700,4795,4884,4973,5047,5145,5241,5342,5459,5612,5714,5810,5915,5995"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\34749a6a22909476c020d3b3806f999d\\res\\values-mr\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +123,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.6.2.aar\\d06424d5a6b2eeb264bf8ae5e394b91f\\res\\values-mr\\values.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.6.0.aar\\82f408a0d77b69a39653dbbf119a0316\\res\\values-mr\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "0,0,0,0,0,0,0",
@@ -106,54 +157,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.6.2.aar\\135c6a9a8ae4c545fa729b36ef64fdc2\\res\\values-mr\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "298,374,471,555,665,797,882,1054,1175,1281,1393,1496,1594,1670,1767,1864,1968,2044,2120,2193,2269,2366,2463,2554,2639,2724,2794,2888,2980,3077,3190,3343,3441,3533,3634",
-                        "endColumns": "75,96,83,109,131,84,171,120,105,111,102,97,75,96,96,103,75,75,72,75,96,96,90,84,84,69,93,91,96,112,152,97,91,100,75",
-                        "endOffsets": "373,470,554,664,796,881,1053,1174,1280,1392,1495,1593,1669,1766,1863,1967,2043,2119,2192,2268,2365,2462,2553,2638,2723,2793,2887,2979,3076,3189,3342,3440,3532,3633,3709"
-                    },
-                    "to": {
-                        "startLines": "21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2071,2151,2252,2340,2454,2586,2675,2851,2976,3086,3202,3309,3411,3491,3592,3693,3801,4266,4346,4423,4503,4604,4705,4800,4889,4978,5052,5150,5246,5347,5464,5617,5719,5815,5920",
-                        "endColumns": "79,100,87,113,131,88,175,124,109,115,106,101,79,100,100,107,79,79,76,79,100,100,94,88,88,73,97,95,100,116,152,101,95,104,79",
-                        "endOffsets": "2146,2247,2335,2449,2581,2670,2846,2971,3081,3197,3304,3406,3486,3587,3688,3796,3876,4341,4418,4498,4599,4700,4795,4884,4973,5047,5145,5241,5342,5459,5612,5714,5810,5915,5995"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\e5a37d27b5b7b15520b6eb80abe65a71\\res\\values-mr\\values.xml",
+                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.6.0.aar\\65295e4eac5be2f03302a0655d835f91\\res\\values-mr\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
-                        "startOffsets": "285",
-                        "endColumns": "201",
-                        "endOffsets": "486"
+                        "startOffsets": "243",
+                        "endColumns": "99",
+                        "endOffsets": "342"
                     },
                     "to": {
-                        "startLines": "66",
+                        "startLines": "76",
                         "startColumns": "4",
-                        "startOffsets": "7002",
-                        "endColumns": "201",
-                        "endOffsets": "7199"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-gcm-11.6.2.aar\\f5ec372fac8874140e37469c5d8b9ec9\\res\\values-mr\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "230",
-                        "endColumns": "96",
-                        "endOffsets": "326"
-                    },
-                    "to": {
-                        "startLines": "77",
-                        "startColumns": "4",
-                        "startOffsets": "8627",
-                        "endColumns": "100",
-                        "endOffsets": "8723"
+                        "startOffsets": "8523",
+                        "endColumns": "103",
+                        "endOffsets": "8622"
                     }
                 },
                 {
@@ -171,23 +188,6 @@
                         "startOffsets": "8728,8826,8932,9043,9155,9254,9343,9435,9546,9644,9743,9843,9940,10057,10166,10250,10335,10417,10520,10624,10710",
                         "endColumns": "97,105,110,111,98,88,91,110,97,98,99,96,116,108,83,84,81,102,103,85,96",
                         "endOffsets": "8821,8927,9038,9150,9249,9338,9430,9541,9639,9738,9838,9935,10052,10161,10245,10330,10412,10515,10619,10705,10802"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mosaab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.6.2.aar\\432bf856eb95eeef4739c6aaac3a21f2\\res\\values-mr\\values.xml",
-                    "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "233,331",
-                        "endColumns": "97,88",
-                        "endOffsets": "330,419"
-                    },
-                    "to": {
-                        "startLines": "99,100",
-                        "startColumns": "4,4",
-                        "startOffsets": "10807,10909",
-                        "endColumns": "101,92",
-                        "endOffsets": "10904,10997"
                     }
                 }
             ]
