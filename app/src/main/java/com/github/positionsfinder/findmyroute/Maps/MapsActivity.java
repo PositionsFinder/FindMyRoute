@@ -78,24 +78,27 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // get username for greeting message
         if (getIntent().hasExtra("user")) {
             userName = getIntent().getExtras().getString("user").toString();
-            Toast.makeText(this, "Hallo, " + userName + ". Wait until the Location is Loaded!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Hallo, " + userName + ". Please WAIT until the Location is Loaded!", Toast.LENGTH_LONG).show();
         }
         // if user offline!
         if (getIntent().hasExtra("offline")) {
             hidePartner = true;
         }
 
-        //ToDo: Check if useronline
         fabuttonFriendRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                System.out.println(hidePartner + " " + Splash.vpn);
                 if (hidePartner) {
                     Toast.makeText(MapsActivity.this, "Please Login first...", Toast.LENGTH_SHORT).show();
                 } else {
                     if (Splash.vpn) {
-                        showConnectToFriendDialogWindow();
+                        if (myPos != null) {
+                            showConnectToFriendDialogWindow();
+                        } else {
+                            Toast.makeText(MapsActivity.this, "Position still Loading...", Toast.LENGTH_SHORT).show();
+
+                        }
                     }
                 }
             }
@@ -104,22 +107,26 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         fabuttonCurrentLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(MapsActivity.this, "Your Position is: " + myPos, Toast.LENGTH_SHORT).show();
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPos, (mMap.getMaxZoomLevel() - 3)));
-                final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Your Position is: " + myPos, Snackbar.LENGTH_INDEFINITE);
-                snackBar.setAction("Dismiss", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        snackBar.dismiss();
+                if (myPos != null) {
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myPos, (mMap.getMaxZoomLevel() - 3)));
+
+                    final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), "Your Position is: " + myPos, Snackbar.LENGTH_INDEFINITE);
+                    snackBar.setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            snackBar.dismiss();
+                        }
+                    });
+                    snackBar.show();
+                    try {
+                        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                        r.play();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                });
-                snackBar.show();
-                try {
-                    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                    r.play();
-                } catch (Exception e) {
-                    e.printStackTrace();
+                }else{
+                    Toast.makeText(MapsActivity.this, "Position still Loading...", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -209,14 +216,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {
-
     }
 
     @Override
     public void onProviderEnabled(String s) {
 
     }
-
 
     @Override
     public void onProviderDisabled(String s) {
@@ -245,12 +250,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (hidePartner) {
                     Toast.makeText(this, "Please Login first...", Toast.LENGTH_SHORT).show();
                 } else {
-                    showConnectToFriendDialogWindow();
+                    if (myPos != null) {
+                        showConnectToFriendDialogWindow();
+                    } else {
+                        Toast.makeText(MapsActivity.this, "Position still Loading...", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
             case R.id.attractions:
-                dialogAttractionWindow();
-                Toast.makeText(this, "Tourist Attractions", Toast.LENGTH_SHORT).show();
+                if (myPos != null) {
+                    dialogAttractionWindow();
+                } else {
+                    Toast.makeText(MapsActivity.this, "Position still Loading...", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
         return true;

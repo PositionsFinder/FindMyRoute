@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.design.widget.Snackbar;
@@ -66,11 +69,39 @@ public class MainActivity extends AppCompatActivity {
 
         //Internet and VPN check from Splash.class
         if (getIntent().hasExtra("No_Internet_VPN")) {
-            Toast.makeText(this, getIntent().getExtras().getString("No_Internet_VPN"), Toast.LENGTH_LONG).show();
+            try {
+                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                r.play();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content),getIntent().getExtras().getString("No_Internet_VPN"), Snackbar.LENGTH_INDEFINITE);
+            snackBar.setAction("Dismiss", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    snackBar.dismiss();
+                }
+            });
+            snackBar.show();
         } else if (getIntent().hasExtra("No_Internet")) {
             Toast.makeText(this, getIntent().getExtras().getString("No_Internet"), Toast.LENGTH_LONG).show();
         } else if (getIntent().hasExtra("No_VPN")) {
-            Toast.makeText(this, getIntent().getExtras().getString("No_VPN"), Toast.LENGTH_LONG).show();
+            try {
+                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                r.play();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            final Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content),getIntent().getExtras().getString("No_VPN"), Snackbar.LENGTH_INDEFINITE);
+            snackBar.setAction("Dismiss", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    snackBar.dismiss();
+                }
+            });
+            snackBar.show();
         } else if (getIntent().hasExtra("OK_All")) {
             Toast.makeText(this, getIntent().getExtras().getString("OK_All"), Toast.LENGTH_LONG).show();
         }
