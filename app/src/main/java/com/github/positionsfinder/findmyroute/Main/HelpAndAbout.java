@@ -24,8 +24,8 @@ public class HelpAndAbout extends AppCompatActivity {
         String linkText = "For more information: <a href='https://github.com/PositionsFinder/FindMyRoute'>Click Here</a> .";
 
         text.setText("");
-        text.setText("About:\nJoin My Route Version 2.0 Programmierer: \nAsli Mosaab und Haider Paolo\n-Hochschule München-\nProjekt in Programmierung nativer Android-Apps WS 2017/18 (Schütz))\n");
-        text.append("Help:\nThis Application helps to find the Direction between two users. or a Direction between your current location and a List of tourist attractions\n");
+        text.setText("About:\nJoin My Route Version 2.1 beta Programmierer: \nAsli Mosaab und Haider Paolo\n-Hochschule München-\nProjekt in Programmierung nativer Android-Apps WS 2017/18 (Schütz))\n");
+        text.append("Help:\nThis Application helps to find the Direction between two users.(Dynamische-routing) or a Direction between your current location and a List of tourist attractions (Statisch-routing)\n");
         text.append(Html.fromHtml(linkText));
         text.append("\nOr Scan the CODE.");
         text.setMovementMethod(LinkMovementMethod.getInstance());

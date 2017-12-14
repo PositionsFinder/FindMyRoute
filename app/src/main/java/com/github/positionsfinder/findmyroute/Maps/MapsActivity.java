@@ -37,6 +37,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -199,7 +201,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
         myPos = new LatLng(location.getLatitude(), location.getLongitude());
-        MarkerOptions myMarker = new MarkerOptions().position(myPos).title("My Current Place!");
+        MarkerOptions myMarker = new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).position(myPos).title("My Current Place!");
         currentMarker = mMap.addMarker(myMarker);
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setRotateGesturesEnabled(true);
@@ -299,7 +301,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             mMap.clear();
-                            mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
+                            mMap.addMarker(new MarkerOptions().position(myPos).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).snippet("going to " + strName + " :).").title("My Start Point!"));
                             Helper_Position.drawDirectionsLatLng(mMap, myPos, (parsedFile.getLatLng(strName)));
                             dialog.dismiss();
                         }
