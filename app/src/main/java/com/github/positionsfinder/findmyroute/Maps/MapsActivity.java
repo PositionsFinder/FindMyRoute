@@ -38,6 +38,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -201,6 +202,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
         myPos = new LatLng(location.getLatitude(), location.getLongitude());
+        // TODO: Not tested yet. But should work as expected
+        if(mMap != null && location.getBearing() != 0.0) {
+            updateCameraBearing(mMap, location.getBearing());
+        }
         MarkerOptions myMarker = new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).position(myPos).title("My Current Place!");
         currentMarker = mMap.addMarker(myMarker);
         mMap.getUiSettings().setZoomControlsEnabled(true);
@@ -234,6 +239,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    private void updateCameraBearing(GoogleMap googleMap, float cameraBearing) {
+
+        CameraPosition cameraPosition = CameraPosition
+                .builder(googleMap.getCameraPosition())
+                .bearing(cameraBearing)
+                .build();
+        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 
     // Main Menu - Hide menu if Offline
@@ -323,6 +337,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         builderSingle.setTitle("Select the user you want to meet");
 
         ArrayList<String> userNames = Helper_User.getOnlineUsers(getApplicationContext());
+        // Remove the active user from our array so it does not show
+        userNames.remove(userNames.indexOf(userName));
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MapsActivity.this, android.R.layout.select_dialog_singlechoice, userNames);
 
@@ -386,13 +402,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onResume() {
-        System.out.println("hello.... im in onResume");
+        // DBG: System.out.println("hello.... im in onResume");
         Helper_User.setUserOnline(getApplicationContext(), userName);
         super.onResume();
     }
 
     protected void onDestroy() {
-        System.out.println("hallo.... im in onDestroy");
+        // DBG: System.out.println("hallo.... im in onDestroy");
         Helper_User.setUserOffline(getApplicationContext(), userName);
         super.onDestroy();
     }

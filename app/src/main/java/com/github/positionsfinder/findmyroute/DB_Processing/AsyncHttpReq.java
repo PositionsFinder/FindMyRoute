@@ -174,7 +174,7 @@ public abstract class AsyncHttpReq extends AsyncTask<String, Void, Object> {
 
         // Concat the baseURL with our params to get the full URL
         String finalUrl = baseUrl + params;
-        System.out.println(finalUrl);
+        // DBG: System.out.println(finalUrl);
 
         // Execute the doInBackground method and save the retruned Object into our status Object
         Object status = null;
