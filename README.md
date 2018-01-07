@@ -7,7 +7,7 @@ This App helps you to find the Direction between you and other users as a Direct
 
 You need an invite code to sign into the Application, as well as an offline use (route to tourist attraction in munich).
 
-Beta-Version 2.0 is ready to use :).
+Beta-Version 2.2 is ready to use :).
 
 <p align="center">
   <img src="http://image.ibb.co/fMjAKb/Screenshot_20171207_125227.png" width="350"/>
