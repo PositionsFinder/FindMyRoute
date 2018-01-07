@@ -202,10 +202,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // mMap.addMarker(new MarkerOptions().position(myPos).title("My Current Place!"));
         myPos = new LatLng(location.getLatitude(), location.getLongitude());
-        // TODO: Not tested yet. But should work as expected
-        if(mMap != null && location.getBearing() != 0.0) {
-            updateCameraBearing(mMap, location.getBearing());
-        }
+
+        // update the users position
+        Helper_Position.updateUsersPosition(getApplicationContext(),userName,location.getLatitude(),location.getLongitude());
+
         MarkerOptions myMarker = new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).position(myPos).title("My Current Place!");
         currentMarker = mMap.addMarker(myMarker);
         mMap.getUiSettings().setZoomControlsEnabled(true);
@@ -213,6 +213,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.getUiSettings().setScrollGesturesEnabled(true);
         mMap.getUiSettings().setTiltGesturesEnabled(false);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(myPos));
+
+        // TODO: To be tested!
+        if(mMap != null && location.getBearing() != 0.0) {
+            updateCameraBearing(mMap, location.getBearing());
+        }
 
         if ((partnerName != null)) {
             calculateRoute(partnerName);
